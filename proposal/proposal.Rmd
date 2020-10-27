@@ -1,6 +1,6 @@
 ---
 title: "Project proposal"
-author: "Team name"
+author: "INFINITE"
 output: github_document
 ---
 
@@ -11,13 +11,32 @@ library(broom)
 
 ## 1. Introduction
 
+The dataset "USvideos" came from the Kaggle website and was collected by YouTube API, the dataset includes several months of data on the daily trending US YouTube videos. To determine the year’s top-trending videos, YouTube uses a combination of factors including measuring users interactions(number of views, comments, and likes). 
+
+The general research question is “Which factors affect how popular a YouTube video will be?” We are assuming that the popularity is determined by the factors of number of views, comments, and likes. 
+
+The variables are video_id, trending_date, title, channel_title, category_id, publish_time, tags, views, likes, dislikes, comment_count, thumbnail_link, comment_disabled, rating_disabled, video_error_or_removed, description.
 
 
 ## 2. Data
-
+```{r}
+USvideos <- read_csv("../data/USvideos.csv")
+glimpse(USvideos)
+```
 
 
 ## 3. Data analysis plan
+
+The outcome variables will be number of views, comments, and likes; and predictor variables will be video_id, category_id, and publish_time.
+
+We plan to make comparisons on different categories, to research which category generally is the most popular one.
+
+We are planning on using a ridge plot or histogram to visualize the data as this fulfills our plan to use fill. 
+
+We are also planning on using basic summary statistics such as median, minimum value, and maximum value. Using the summary statistics for the views, likes, and comments, will give us representative numbers of the average amount for every video category. We need statistical methods to display which type of videos is the most popular. 
+
+Lastly, these statistics analysis should indicate a certain type of youtube video that generally receives most likes, views, and comments, as the most popular type.
+
 
 
 
