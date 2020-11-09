@@ -39,8 +39,15 @@ We are also planning to summarise each video category's total number of views. B
 We plan to use bar plot to visualize the data, as it can directly and clearly display the comparison between different video types. 
 
 Our exploration theme is to find out the most popular type of video, these statistics analysis should indicate a certain type of youtube video that generally receives most likes, views, and comments, as the most popular type.
-```{r}
 
+We expect the video type that has highest likes and comments proportion is the same type, also it has high number of viewers.
+
+```{r}
+USvideos %>%
+  count(category_id, views, likes, comment_count) %>%
+  group_by(category_id) %>%
+  mutate(prop_like = likes/views, prop_comment = comment_count/views) %>%
+  select(prop_like, prop_comment)
 ```
 
 
