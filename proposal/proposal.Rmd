@@ -13,9 +13,11 @@ library(broom)
 
 The dataset "USvideos" came from the Kaggle website and was collected by YouTube API, the dataset includes several months of data on the daily trending US YouTube videos. To determine the year’s top-trending videos, YouTube uses a combination of factors including measuring users interactions(number of views, comments, and likes). 
 
-The general research question is “Which factors affect how popular a YouTube video will be?” We are assuming that the popularity is determined by the factors of number of views, comments, and likes. 
+The general research theme is “To find the most popular type of video, through considering following three factors: number of views, comments, and likes. 
 
-The variables are video_id, trending_date, title, channel_title, category_id, publish_time, tags, views, likes, dislikes, comment_count, thumbnail_link, comment_disabled, rating_disabled, video_error_or_removed, description.
+The variables that we will mainly use would be:
+title, channel_title, category_id, tags, and description-- these variables help us to determine type of the most popular video, from multiple angles;
+views, likes, comment_count-- these three variables indicate the popularity of each video.
 
 
 ## 2. Data
