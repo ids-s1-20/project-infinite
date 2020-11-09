@@ -30,18 +30,15 @@ glimpse(USvideos)
 
 ## 3. Data analysis plan
 
-The outcome variables will be number of views, comments, and likes; and predictor variables will be video_id, category_id, and publish_time.
+The outcome variables will be number of views, comments, and likes; and predictor variables will be category_id.
 
 We plan to make comparisons on different categories, to research which category generally is the most popular one.
 
-We are planning on using a ridge plot or histogram to visualize the data as this fulfills our plan to use fill. 
+We are also planning to summarise each video category's total number of views. Besides, we weill also calculate the proportion of comments (comments/views) and the proportion of likes (likes/views). Since we believe that apart from having many viewers, a popular video should also receive high proportion of likes as well as comments （the video content should inspire viewers to discuss).
 
-We are also planning on using basic summary statistics such as median, minimum value, and maximum value. Using the summary statistics for the views, likes, and comments, will give us representative numbers of the average amount for every video category. We need statistical methods to display which type of videos is the most popular. 
+We plan to use bar plot to visualize the data, as it can directly and clearly display the comparison between different video types. 
 
 Our exploration theme is to find out the most popular type of video, these statistics analysis should indicate a certain type of youtube video that generally receives most likes, views, and comments, as the most popular type.
-
-summary stats:
-Use comments, likes, and views, to calculate the proportion of comments and likes received: comments/views, and likes/views )
 ```{r}
 
 ```
