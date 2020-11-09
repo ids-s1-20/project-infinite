@@ -16,8 +16,9 @@ The dataset "USvideos" came from the Kaggle website and was collected by YouTube
 The general research theme is “To find the most popular type of video, through considering following three factors: number of views, comments, and likes. 
 
 The variables that we will mainly use would be:
-title, channel_title, category_id, tags, and description-- these variables help us to determine type of the most popular video, from multiple angles;
-views, likes, comment_count-- these three variables indicate the popularity of each video.
+category_id-- we will use this variable to determine type of the most popular video (to find the category in json file, according to the category_id);
+views, likes, comment_count-- these three variables indicate the popularity of each video;
+we will also use title, channel_title, tags, and description, to further determine type of the most popular video.
 
 
 ## 2. Data
@@ -39,6 +40,10 @@ We are also planning on using basic summary statistics such as median, minimum v
 
 Lastly, these statistics analysis should indicate a certain type of youtube video that generally receives most likes, views, and comments, as the most popular type.
 
+summary stats:
+use comments, likes, and views, to calculate the proportion of comments and likes received: comments/views, and likes/views )
+```{r}
 
+```
 
 
