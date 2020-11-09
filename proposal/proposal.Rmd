@@ -13,7 +13,7 @@ library(broom)
 
 The dataset "USvideos" came from the Kaggle website and was collected by YouTube API, the dataset includes several months of data on the daily trending US YouTube videos. To determine the year’s top-trending videos, YouTube uses a combination of factors including measuring users interactions(number of views, comments, and likes). 
 
-The general research theme is “To find the most popular type of video, through considering following three factors: number of views, comments, and likes. 
+The general research question is “Which is the most popular type of video, through considering following three factors: number of views, comments, and likes". 
 
 The variables that we will mainly use would be:
 category_id-- we will use this variable to determine type of the most popular video (to find the category in json file, according to the category_id);
@@ -38,7 +38,7 @@ We are planning on using a ridge plot or histogram to visualize the data as this
 
 We are also planning on using basic summary statistics such as median, minimum value, and maximum value. Using the summary statistics for the views, likes, and comments, will give us representative numbers of the average amount for every video category. We need statistical methods to display which type of videos is the most popular. 
 
-Lastly, these statistics analysis should indicate a certain type of youtube video that generally receives most likes, views, and comments, as the most popular type.
+Our exploration theme is to find out the most popular type of video, these statistics analysis should indicate a certain type of youtube video that generally receives most likes, views, and comments, as the most popular type.
 
 summary stats:
 Use comments, likes, and views, to calculate the proportion of comments and likes received: comments/views, and likes/views )
