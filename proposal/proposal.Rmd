@@ -34,7 +34,7 @@ The outcome variables will be number of views, comments, and likes; and predicto
 
 We plan to make comparisons on different categories, to research which category generally is the most popular one.
 
-We are also planning to summarise each video category's total number of views. Besides, we we will also calculate the proportion of comments (comments/views) and the proportion of likes (likes/views). Since we believe that apart from having many viewers, a popular video should also receive high proportion of likes as well as comments （the video content should inspire viewers to discuss).
+We are also planning to summarize each video category's total number of views. Besides, we we will also calculate the proportion of comments (comments/views) and the proportion of likes (likes/views). Since we believe that apart from having many viewers, a popular video should also receive high proportion of likes as well as comments （the video content should inspire viewers to discuss).
 
 We plan to use bar plot to visualize the data, as it can directly and clearly display the comparison between different video types. 
 
