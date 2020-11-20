@@ -33,7 +33,7 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 
 class: center, middle
 
-## A statement of the overall goal / research question
+*What is the most popular video on Youtube? Factoring in the number of views, comments and likes.*
 
 ---
 
