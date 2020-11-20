@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 Youtube Popularity
+=======
+[![Check allowed files](https://github.com/ids-s1-20/project-infinite/workflows/Check%20allowed%20files/badge.svg)](https://github.com/ids-s1-20/project-infinite/actions?query=workflow:%22Check%20allowed%20files%22) [![Check presentation renders](https://github.com/ids-s1-20/project-infinite/workflows/Check%20presentation%20renders/badge.svg)](https://github.com/ids-s1-20/project-infinite/actions?query=workflow:%22Check%20presentation%20renders%22) [![Check README renders](https://github.com/ids-s1-20/project-infinite/workflows/Check%20README%20renders/badge.svg)](https://github.com/ids-s1-20/project-infinite/actions?query=workflow:%22Check%20README%20renders%22)
+
+
+Project title
+>>>>>>> 7152dd93290c92e39c8c1548de7e713efdf2929d
 ================
 Infinite
 
