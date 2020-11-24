@@ -9,20 +9,25 @@ library(broom)
 
 ## 1\. Introduction
 
-The dataset “USvideos” came from the Kaggle website and was collected by
-YouTube API, the dataset includes several months of data on the daily
-trending US YouTube videos. To determine the year’s top-trending videos,
-YouTube uses a combination of factors including measuring users
-interactions(number of views, comments, and likes).
+The data set “USvideos” comes from the Kaggle website and was collected
+by YouTube API, the data set includes several months of data on the
+daily trending US YouTube videos. To determine the year’s top-trending
+videos, YouTube uses a combination of factors including measuring user
+interaction(number of views, comments, and likes).
 
-The general research question is “Which factors affect how popular a
-YouTube video will be?” We are assuming that the popularity is
-determined by the factors of number of views, comments, and likes.
+The general research question is “What is the most popular video on
+Youtube, factoring in the number of views, comments, and likes”.
 
-The variables are video\_id, trending\_date, title, channel\_title,
-category\_id, publish\_time, tags, views, likes, dislikes,
-comment\_count, thumbnail\_link, comment\_disabled, rating\_disabled,
-video\_error\_or\_removed, description.
+The variables that we will mainly use would be: category\_id - We will
+use this variable to determine the most popular video (find the category
+in json file, according to the category\_id); views - This variable will
+indicate the number of viewers on a video, likes - THis variable will
+indicate the number of likes on a video, comment\_count - This variable
+will indicate the number of comments on a video, All three of these
+variables will help us determine the popularity of each video. these
+three variables indicate the popularity of each video, We will also use
+title, channel\_title, tags, and description to further examine how
+these have an effect on how popular a video might become.
 
 ## 2\. Data
 
@@ -30,7 +35,8 @@ video\_error\_or\_removed, description.
 USvideos <- read_csv("../data/USvideos.csv")
 ```
 
-    ## Parsed with column specification:
+    ## 
+    ## ── Column specification ────────────────────────────────────────────────────────
     ## cols(
     ##   video_id = col_character(),
     ##   trending_date = col_character(),
@@ -46,26 +52,19 @@ USvideos <- read_csv("../data/USvideos.csv")
     ##   thumbnail_link = col_character(),
     ##   comments_disabled = col_logical(),
     ##   ratings_disabled = col_logical(),
-    ##   video_error_or_removed = col_logical(),
-    ##   description = col_character()
+    ##   video_error_or_removed = col_logical()
     ## )
 
-    ## Warning: 1533544 parsing failures.
-    ## row  col           expected actual                   file
-    ##   2 tags delimiter or quote      | '../data/USvideos.csv'
-    ##   2 tags delimiter or quote      l '../data/USvideos.csv'
-    ##   2 tags delimiter or quote      | '../data/USvideos.csv'
-    ##   2 tags delimiter or quote      j '../data/USvideos.csv'
-    ##   2 tags delimiter or quote      | '../data/USvideos.csv'
-    ## ... .... .................. ...... ......................
-    ## See problems(...) for more details.
+    ## Warning: 1 parsing failure.
+    ##   row col   expected     actual                   file
+    ## 10000  -- 15 columns 16 columns '../data/USvideos.csv'
 
 ``` r
 glimpse(USvideos)
 ```
 
-    ## Rows: 40,949
-    ## Columns: 16
+    ## Rows: 10,000
+    ## Columns: 15
     ## $ video_id               <chr> "2kyS6SvSYSE", "1ZAPwfrtAFY", "5qpjK5DgCt4", "…
     ## $ trending_date          <chr> "17.14.11", "17.14.11", "17.14.11", "17.14.11"…
     ## $ title                  <chr> "WE WANT TO TALK ABOUT OUR MARRIAGE", "The Tru…
@@ -81,25 +80,55 @@ glimpse(USvideos)
     ## $ comments_disabled      <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
     ## $ ratings_disabled       <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
     ## $ video_error_or_removed <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
-    ## $ description            <chr> "SHANTELL'S CHANNEL - https://www.youtube.com/…
 
 ## 3\. Data analysis plan
 
 The outcome variables will be number of views, comments, and likes; and
-predictor variables will be video\_id, category\_id, and publish\_time.
+predictor variables will be category\_id.
 
 We plan to make comparisons on different categories, to research which
 category generally is the most popular one.
 
-We are planning on using a ridge plot or histogram to visualize the data
-as this fulfills our plan to use fill.
+We are also planning to summarize each video category’s total number of
+views. Besides, we we will also calculate the proportion of comments
+(comments/views) and the proportion of likes (likes/views). Since we
+believe that apart from having many viewers, a popular video should also
+receive high proportion of likes as well as comments （the video content
+should inspire viewers to discuss).
 
-We are also planning on using basic summary statistics such as median,
-minimum value, and maximum value. Using the summary statistics for the
-views, likes, and comments, will give us representative numbers of the
-average amount for every video category. We need statistical methods to
-display which type of videos is the most popular.
+We plan to use bar plot to visualize the data, as it can directly and
+clearly display the comparison between different video types.
 
-Lastly, these statistics analysis should indicate a certain type of
-youtube video that generally receives most likes, views, and comments,
-as the most popular type.
+Our exploration theme is to find out the most popular type of video,
+these statistics analysis should indicate a certain type of youtube
+video that generally receives most likes, views, and comments, as the
+most popular type.
+
+We expect the video type that has highest likes and comments proportion
+is the same type, also it has high number of viewers.
+
+``` r
+USvideos %>%
+  count(category_id, views, likes, comment_count) %>%
+  group_by(category_id) %>%
+  mutate(prop_like = likes/views, prop_comment = comment_count/views) %>%
+  select(prop_like, prop_comment)
+```
+
+    ## Adding missing grouping variables: `category_id`
+
+    ## # A tibble: 10,000 x 3
+    ## # Groups:   category_id [16]
+    ##    category_id prop_like prop_comment
+    ##          <dbl>     <dbl>        <dbl>
+    ##  1           1   0.00772     0.00122 
+    ##  2           1   0.00769     0.00105 
+    ##  3           1   0.00765     0.000956
+    ##  4           1   0.00781     0.000901
+    ##  5           1   0.00749     0.000864
+    ##  6           1   0.00778     0.000834
+    ##  7           1   0.0201      0.00926 
+    ##  8           1   0.00391     0.000586
+    ##  9           1   0.00376     0.000564
+    ## 10           1   0.00267     0.000667
+    ## # … with 9,990 more rows

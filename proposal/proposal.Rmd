@@ -9,9 +9,10 @@ library(tidyverse)
 library(broom)
 ```
 
+
 ## 1. Introduction
 
-The dataset "USvideos" comes from the Kaggle website and was collected by YouTube API, the data set includes several months of data on the daily trending US YouTube videos. To determine the year’s top-trending videos, YouTube uses a combination of factors including measuring user interaction(number of views, comments, and likes). 
+The data set "USvideos" comes from the Kaggle website and was collected by YouTube API, the data set includes several months of data on the daily trending US YouTube videos. To determine the year’s top-trending videos, YouTube uses a combination of factors including measuring user interaction(number of views, comments, and likes). 
 
 The general research question is “What is the most popular video on Youtube, factoring in the number of views, comments, and likes". 
 
@@ -22,7 +23,6 @@ likes - THis variable will indicate the number of likes on a video,
 comment_count - This variable will indicate the number of comments on a video,
 All three of these variables will help us determine the popularity of each video. these three variables indicate the popularity of each video,
 We will also use title, channel_title, tags, and description to further examine how these have an effect on how popular a video might become. 
-
 
 ## 2. Data
 ```{r}

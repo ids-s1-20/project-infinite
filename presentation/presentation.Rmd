@@ -1,7 +1,7 @@
 ---
 title: "Infinite"
 subtitle: "Infinite possibilites"
-author: "Infinite <br> Alicia, Matt, Lucas, Lucia"
+author: "Infinite <br> Alicia, Lucas, Lucia"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
 output:
@@ -17,7 +17,6 @@ output:
 ```{r load-packages, include = FALSE}
 # Add any additional packages you need to this chunk
 library(tidyverse)
-library(tidyverse)
 library(knitr)
 ```
 
@@ -27,7 +26,7 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 ```
 
 ```{r load-data, include=FALSE}
-# Load your data here
+read_csv("../data/USvideos.csv")
 ```
 
 
@@ -93,9 +92,6 @@ or text in two columns $^*$
 
 ```{r boring-regression}
 # a boring regression
-model <- lm(dist ~ speed, data = cars)
-tidy(model)
-glance(model)
 ```
 
 ---
