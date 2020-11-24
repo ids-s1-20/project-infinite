@@ -21,6 +21,7 @@ class: center, middle, inverse, title-slide
 ---
 
 
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 
 ```r
 library(tidyverse)
@@ -45,13 +46,51 @@ library(tidyverse)
 
 ```r
 library(knitr)
+library(palmerpenguins)
+library(tidymodels)
+```
+
+```
+## ── Attaching packages ────────────────────────────────────── tidymodels 0.1.1 ──
+```
+
+```
+## ✓ broom     0.7.2      ✓ recipes   0.1.15
+## ✓ dials     0.0.9      ✓ rsample   0.0.8 
+## ✓ infer     0.5.3      ✓ tune      0.1.1 
+## ✓ modeldata 0.1.0      ✓ workflows 0.2.1 
+## ✓ parsnip   0.1.4      ✓ yardstick 0.0.7
+```
+
+```
+## ── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
+## x scales::discard() masks purrr::discard()
+## x dplyr::filter()   masks stats::filter()
+## x recipes::fixed()  masks stringr::fixed()
+## x dplyr::lag()      masks stats::lag()
+## x yardstick::spec() masks readr::spec()
+## x recipes::step()   masks stats::step()
+```
+
+```r
+library(broom)
+library(here)
+```
+
+```
+## here() starts at /cloud/project
 ```
 
 
 
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 
 ```r
 read_csv("../data/USvideos.csv")
+```
+
+```
+## Warning: Missing column names filled in: 'X16' [16]
 ```
 
 ```
@@ -72,18 +111,19 @@ read_csv("../data/USvideos.csv")
 ##   thumbnail_link = col_character(),
 ##   comments_disabled = col_logical(),
 ##   ratings_disabled = col_logical(),
-##   video_error_or_removed = col_logical()
+##   video_error_or_removed = col_logical(),
+##   X16 = col_logical()
 ## )
 ```
 
 ```
 ## Warning: 1 parsing failure.
-##   row col   expected     actual                   file
-## 10000  -- 15 columns 16 columns '../data/USvideos.csv'
+##   row col           expected                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        actual                   file
+## 10001 X16 1/0/T/F/TRUE/FALSE YARRR feasters! Spongebob Squarepants will always have a special place in our hearts, and this Kelp Shake has an even special-er place in our BELLIES! Learn how to DIY make a recreation of the infamous Kelp Shake as well as a healthy version you can drink and get strong from as well.More SPONGEBOB Recipes:KRABBY PATTY:https://youtu.be/gvCclQ0jUwETRIPLE GOOBERBERRY SUNDAE:https://youtu.be/0rUAuwb9J8MSend us your creations on Instagram, Facebook, and Twitter!http://www.twitter.com/FeastOfFictionhttp://www.instagram.com/FeastOfFictionhttp://www.facebook.com/FeastOfFiction=================Download our Kelp Shake logo here:http://www.mediafire.com/file/683k1ilkffy415x/Kelp%20Shake%20Label.jpgIngredients:3 cups Soy milkHandful spinach1 tsp Kelp extract (ordered) secret ingredient1 cup Pineapple 1 Green apple1 BananaDirections:Blend all ingredients in a blender. Serve in special kelp shake bottle. Well. That was easy.=================Download the Soundtrack:http://jimmywong.bandcamp.com/album/feast-of-fiction-music-from-marbleotTwitter: http://www.twitter.com/FeastOfFictionhttp://www.twitter.com/jfwonghttp://www.twitter.com/ashleyquizFacebook: http://www.facebook.com/FeastOfFictionhttp://www.facebook.com/therealjimmyInstagram:http://www.instagram.com/FeastOfFictionhttp://www.instagram.com/jfwonghttp://www.instagram.com/ashrachelle=================Produced by John-Paul Hoang '../data/USvideos.csv'
 ```
 
 ```
-## # A tibble: 10,000 x 15
+## # A tibble: 10,001 x 16
 ##    video_id trending_date title channel_title category_id publish_time       
 ##    &lt;chr&gt;    &lt;chr&gt;         &lt;chr&gt; &lt;chr&gt;               &lt;dbl&gt; &lt;dttm&gt;             
 ##  1 2kyS6Sv… 17.14.11      WE W… CaseyNeistat           22 2017-11-13 17:13:01
@@ -96,10 +136,10 @@ read_csv("../data/USvideos.csv")
 ##  8 nc99ccS… 17.14.11      5 Ic… CrazyRussian…          28 2017-11-12 21:50:37
 ##  9 jr9QtXw… 17.14.11      The … 20th Century…           1 2017-11-13 14:00:23
 ## 10 TUmyygC… 17.14.11      Why … Vox                    25 2017-11-13 13:45:16
-## # … with 9,990 more rows, and 9 more variables: tags &lt;chr&gt;, views &lt;dbl&gt;,
+## # … with 9,991 more rows, and 10 more variables: tags &lt;chr&gt;, views &lt;dbl&gt;,
 ## #   likes &lt;dbl&gt;, dislikes &lt;dbl&gt;, comment_count &lt;dbl&gt;, thumbnail_link &lt;chr&gt;,
 ## #   comments_disabled &lt;lgl&gt;, ratings_disabled &lt;lgl&gt;,
-## #   video_error_or_removed &lt;lgl&gt;
+## #   video_error_or_removed &lt;lgl&gt;, X16 &lt;lgl&gt;
 ```
 
 
@@ -171,7 +211,7 @@ or text in two columns `\(^*\)`
 
 
 
-&lt;img src="presentation_files/figure-html/plot-iris-1.png" width="80%" /&gt;
+
 
 ---
 
