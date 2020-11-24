@@ -35,6 +35,8 @@ these have an effect on how popular a video might become.
 USvideos <- read_csv("../data/USvideos.csv")
 ```
 
+    ## Warning: Missing column names filled in: 'X16' [16]
+
     ## 
     ## ── Column specification ────────────────────────────────────────────────────────
     ## cols(
@@ -52,19 +54,20 @@ USvideos <- read_csv("../data/USvideos.csv")
     ##   thumbnail_link = col_character(),
     ##   comments_disabled = col_logical(),
     ##   ratings_disabled = col_logical(),
-    ##   video_error_or_removed = col_logical()
+    ##   video_error_or_removed = col_logical(),
+    ##   X16 = col_logical()
     ## )
 
     ## Warning: 1 parsing failure.
-    ##   row col   expected     actual                   file
-    ## 10000  -- 15 columns 16 columns '../data/USvideos.csv'
+    ##   row col           expected                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        actual                   file
+    ## 10001 X16 1/0/T/F/TRUE/FALSE YARRR feasters! Spongebob Squarepants will always have a special place in our hearts, and this Kelp Shake has an even special-er place in our BELLIES! Learn how to DIY make a recreation of the infamous Kelp Shake as well as a healthy version you can drink and get strong from as well.More SPONGEBOB Recipes:KRABBY PATTY:https://youtu.be/gvCclQ0jUwETRIPLE GOOBERBERRY SUNDAE:https://youtu.be/0rUAuwb9J8MSend us your creations on Instagram, Facebook, and Twitter!http://www.twitter.com/FeastOfFictionhttp://www.instagram.com/FeastOfFictionhttp://www.facebook.com/FeastOfFiction=================Download our Kelp Shake logo here:http://www.mediafire.com/file/683k1ilkffy415x/Kelp%20Shake%20Label.jpgIngredients:3 cups Soy milkHandful spinach1 tsp Kelp extract (ordered) secret ingredient1 cup Pineapple 1 Green apple1 BananaDirections:Blend all ingredients in a blender. Serve in special kelp shake bottle. Well. That was easy.=================Download the Soundtrack:http://jimmywong.bandcamp.com/album/feast-of-fiction-music-from-marbleotTwitter: http://www.twitter.com/FeastOfFictionhttp://www.twitter.com/jfwonghttp://www.twitter.com/ashleyquizFacebook: http://www.facebook.com/FeastOfFictionhttp://www.facebook.com/therealjimmyInstagram:http://www.instagram.com/FeastOfFictionhttp://www.instagram.com/jfwonghttp://www.instagram.com/ashrachelle=================Produced by John-Paul Hoang '../data/USvideos.csv'
 
 ``` r
 glimpse(USvideos)
 ```
 
-    ## Rows: 10,000
-    ## Columns: 15
+    ## Rows: 10,001
+    ## Columns: 16
     ## $ video_id               <chr> "2kyS6SvSYSE", "1ZAPwfrtAFY", "5qpjK5DgCt4", "…
     ## $ trending_date          <chr> "17.14.11", "17.14.11", "17.14.11", "17.14.11"…
     ## $ title                  <chr> "WE WANT TO TALK ABOUT OUR MARRIAGE", "The Tru…
@@ -80,6 +83,7 @@ glimpse(USvideos)
     ## $ comments_disabled      <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
     ## $ ratings_disabled       <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
     ## $ video_error_or_removed <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…
+    ## $ X16                    <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
 
 ## 3\. Data analysis plan
 
@@ -117,8 +121,8 @@ USvideos %>%
 
     ## Adding missing grouping variables: `category_id`
 
-    ## # A tibble: 10,000 x 3
-    ## # Groups:   category_id [16]
+    ## # A tibble: 10,001 x 3
+    ## # Groups:   category_id [17]
     ##    category_id prop_like prop_comment
     ##          <dbl>     <dbl>        <dbl>
     ##  1           1   0.00772     0.00122 
@@ -131,4 +135,4 @@ USvideos %>%
     ##  8           1   0.00391     0.000586
     ##  9           1   0.00376     0.000564
     ## 10           1   0.00267     0.000667
-    ## # … with 9,990 more rows
+    ## # … with 9,991 more rows
