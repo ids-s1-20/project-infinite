@@ -14,8 +14,7 @@ output:
       countIncrementalSlides: false
 ---
 
-```{r load-packages, include = FALSE}
-# Add any additional packages you need to this chunk
+```{r load-packages}
 library(tidyverse)
 library(knitr)
 ```
@@ -25,7 +24,7 @@ library(knitr)
 knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618, out.width = "80%")
 ```
 
-```{r load-data, include=FALSE}
+```{r load-data}
 read_csv("../data/USvideos.csv")
 ```
 
@@ -91,20 +90,15 @@ or text in two columns $^*$
 # Code
 
 ```{r boring-regression}
-usvideos %>% 
-  ggplot(x = likes, y = comments, color = views) +
-  geom_line()
+
 ```
 
 ---
 
 # Plots
 
-```{r recode-species, echo = FALSE}
-# In this chunk I'm doing a bunch of analysis that I don't want to present 
-# in my slides. But I need the resulting data frame for a plot I want to present.
-iris_modified <- iris %>%
-  mutate(Species = fct_other(Species, keep = "setosa"))
+```{r recode-species}
+
 ```
 
 ```{r plot-iris, echo = FALSE, fig.height = 2.5, fig.width = 5}
