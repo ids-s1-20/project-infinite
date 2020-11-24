@@ -1,6 +1,6 @@
-Youtube Popularity
+What is the most popular video on Youtube, factoring in the number of views, comments, and likes
 ================
-Infinite
+INFINITE
 
 ## Summary
 
@@ -29,11 +29,11 @@ Our presentation can be found [here](presentation/presentation.html).
 ## Data
 
 Include a citation for your data here. See
-<http://libraryguides.vu.edu.au/c.php?g=386501&p=4347840> for guidance
+<https://github.com/ids-s1-20/project-infinite.git> for guidance
 on proper citation for datasets. If you got your data off the web, make
 sure to note the retrieval date.
 
 ## References
 
-List any references here. You should, at a minimum, list your data
-source.
+The link to the dataset - 
+https://www.kaggle.com/datasnaek/youtube-new?select=CAvideos.csv
