@@ -1,5 +1,5 @@
 ---
-title: "What is the most popular video on Youtube, factoring in the number of views, comments, and likes"
+title: "What is the most popular video on Youtube, factoring in the number of views, comments, and likes."
 subtitle: "Infinite possibilites"
 author: "Infinite <br> Alicia, Lucas, Lucia"
 institute: "University of Edinburgh"
