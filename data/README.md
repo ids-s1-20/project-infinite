@@ -1,8 +1,8 @@
 # data
 
 Data Dimensions:
-40949 observations
-16 variables
+1000 observations
+15 variables
 
 ## USvideos
 
@@ -21,5 +21,4 @@ Data Dimensions:
 - `comments_disabled`: videos that authors do not allow viewers to leave comment
 - `ratings_disabled`: videos that authors do not allow viewrs to rate
 - `video_error_or_removed`: videos that have error happened or are removed
-- `description`: description/introduction of the videos
 
