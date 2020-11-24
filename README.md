@@ -1,4 +1,4 @@
-What is the most popular video on Youtube, factoring in the number of views, comments, and likes
+What is the most popular video on Youtube, factoring in the number of views, comments, and likes.
 ================
 INFINITE
 
