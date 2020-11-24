@@ -30,8 +30,8 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 ```
 
 <<<<<<< HEAD
-```{r load-data}
-read_csv("../data/USvideos.csv")
+```{r load-data, include = FALSE}
+USvideos <- read_csv(here("data/USvideos.csv"))
 ```
 
 
@@ -107,11 +107,8 @@ or text in two columns $^*$
 
 ```
 
-```{r plot-iris, echo = FALSE, fig.height = 2.5, fig.width = 5}
-# Code hidden with echo = FALSE
-# Uses modified iris dataset from previous chunk
-# Play around with height and width until you're happy with the look
-ggplot(data = USvideos, mapping = aes(x = views, y = likes, color = comment)) +
+```{r plot-iris, echo = FALSE}
+ggplot(data = USvideos, mapping = aes(x = views, y = likes, color = comment_count)) +
   geom_point() + 
   theme_minimal() # theme options: https://ggplot2.tidyverse.org/reference/ggtheme.html
 ```
