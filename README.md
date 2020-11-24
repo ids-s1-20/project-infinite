@@ -1,6 +1,6 @@
-Youtube Popularity
+What is the most popular video on Youtube, factoring in the number of views, comments, and likes
 ================
-Infinite
+INFINITE
 
 ## Summary
 
@@ -22,6 +22,35 @@ make is about the code itself. Your results with proper output and
 graphics go in your presentation, this space is for a brief summary of
 your project.
 
+    ## ── Attaching packages ────────────────────────────────── tidyverse 1.3.0 ──
+    ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+    ## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+    ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+    ## ✓ readr   1.4.0     ✓ forcats 0.5.0
+    ## ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
+    ## x dplyr::filter() masks stats::filter()
+    ## x dplyr::lag()    masks stats::lag()
+    ## here() starts at /cloud/project
+ 
+    ## ── Column specification ───────────────────────────────────────────────────
+    ## cols(
+    ##  video_id = col_character(),
+    ##  trending_date = col_character(),
+    ##  title = col_character(),
+    ##  channel_title = col_character(),
+    ##  category_id = col_double(),
+    ##  publish_time = col_datetime(format = ""),
+    ##  tags = col_character(),
+    ##  views = col_double(),
+    ##  likes = col_double(),
+    ##  dislikes = col_double(),
+    ##  comment_count = col_double(),
+    ##  thumbnail_link = col_character(),
+    ##  comments_disabled = col_logical(),
+    ##  ratings_disabled = col_logical(),
+    ##  video_error_or_removed = col_logical()
+    ## )
+
 ## Presentation
 
 Our presentation can be found [here](presentation/presentation.html).
@@ -29,7 +58,7 @@ Our presentation can be found [here](presentation/presentation.html).
 ## Data
 
 Include a citation for your data here. See
-<http://libraryguides.vu.edu.au/c.php?g=386501&p=4347840> for guidance
+<https://github.com/ids-s1-20/project-infinite.git> for guidance
 on proper citation for datasets. If you got your data off the web, make
 sure to note the retrieval date.
 
