@@ -91,7 +91,9 @@ or text in two columns $^*$
 # Code
 
 ```{r boring-regression}
-# a boring regression
+usvideos %>% 
+  ggplot(x = likes, y = comments, color = views) +
+  geom_line()
 ```
 
 ---
