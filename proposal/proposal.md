@@ -87,29 +87,29 @@ glimpse(USvideos)
 
 ## 3\. Data analysis plan
 
-The outcome variables will be number of views, comments, and likes; and
-predictor variables will be category\_id.
+The outcome variables will be the number of views, comments, and likes;
+and predictor variables will be the category\_id.
 
-We plan to make comparisons on different categories, to research which
-category generally is the most popular one.
+We plan to compare different categories to understand which category
+generally is the most popular.
 
-We are also planning to summarize each video category’s total number of
-views. Besides, we we will also calculate the proportion of comments
+We are also planning to summarize each videos total number of views.
+Also, we we will also calculate the proportion of comments
 (comments/views) and the proportion of likes (likes/views). Since we
 believe that apart from having many viewers, a popular video should also
-receive high proportion of likes as well as comments （the video content
-should inspire viewers to discuss).
+receive a high proportion of likes as well as comments （the video
+content should inspire viewers to discuss).
 
-We plan to use bar plot to visualize the data, as it can directly and
-clearly display the comparison between different video types.
+We plan to use a bar plot to visualize the data, as it can directly and
+clearly coomunicate the comparison between different video types.
 
 Our exploration theme is to find out the most popular type of video,
-these statistics analysis should indicate a certain type of youtube
-video that generally receives most likes, views, and comments, as the
-most popular type.
+these statistics analysis should indicate certain types of Youtube video
+that receives the most likes, views, and comments as the most popular
+video.
 
-We expect the video type that has highest likes and comments proportion
-is the same type, also it has high number of viewers.
+We expect the video type that has the largest number of likes, comments
+and viewers to be the most popular on Youtube
 
 ``` r
 USvideos %>%
