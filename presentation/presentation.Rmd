@@ -116,13 +116,13 @@ ggplot(data = USvideos, mapping = aes(x = views, y = likes, color = comment_coun
 ```
 
 ```{r new dates, echo = FALSE}
-gsub("\\.", "/", )
+USvideos$diff_in_days = as.numeric(difftime(USvideos$publish_time, USvideos$trending_date, units = "days")) 
+
 
 ```
 
 ```{r difference in days, echo = FALSE}
-USvideos$diff_in_days = as.numeric(difftime(USvideos$publish_date, USvideos$new_date, units = "days")) 
-USvideos
+
 ```
 
 
