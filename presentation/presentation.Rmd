@@ -106,31 +106,26 @@ or text in two columns $^*$
 # Plots
 
 ```{r filtering, echo = FALSE}
-sapply(str_extract_all(USvideos, "\\b[A-Z]+\\b"), paste, collapse= ' ')
+
 ```
 
-```{r plot-iris, echo = FALSE}
-ggplot(data = USvideos, mapping = aes(x = views, y = likes, color = comment_count)) +
+```{r what-is, echo = FALSE}
+ggplot(data = USvideos, mapping = aes(x = title, y = views, color = likes)) +
   geom_point() + 
   theme_minimal()
 ```
-
-```{r new dates, echo = FALSE}
-USvideos$diff_in_days = as.numeric(difftime(USvideos$publish_time, USvideos$trending_date, units = "days")) 
-
-
-```
-
-```{r difference in days, echo = FALSE}
-
-```
-
 
 
 
 ---
 
 ## Plot and text
+
+
+```{r old dates}
+ggplot(USvideos, mapping = aes(x = publish_time, y = trending_date)) +
+  geom_point()
+```
 
 .pull-left[
 - Some text
