@@ -1,6 +1,6 @@
 ---
-title: "What is the most popular video on Youtube?"
-subtitle: "Infinite possibilites"
+title: "Youtube"
+subtitle: " "
 author: "Infinite <br> Alicia, Lucas, Lucia"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
@@ -14,8 +14,7 @@ output:
       countIncrementalSlides: false
 ---
 
-<<<<<<< HEAD
-```{r load-packages}
+```{r load-packages, include = FALSE}
 library(tidyverse)
 library(knitr)
 library(palmerpenguins)
@@ -31,18 +30,34 @@ library(stringr)
 knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618, out.width = "80%")
 ```
 
-<<<<<<< HEAD
+
 ```{r load-data, include = FALSE}
 USvideos <- read_csv(here("data/USvideos.csv"))
 ```
 
 
-class: center, middle
+class: center, middle, inverse
 
 *What makes a Youtube video popular?*
 
 ---
 
+
+class: inverse, top, middle
+
+# *Packages Used*
+
+
+- Tidyverse
+- Knitr
+- Palmerpenguins
+- Tidymodels
+- Broom
+- Here
+- Dplyr
+- Stringr
+
+---
 class: inverse, center, middle
 
 # Section title
@@ -95,7 +110,7 @@ or text in two columns $^*$
 
 ---
 
-# Code
+# Data Cleaning
 
 
 ```{r cleaned, echo = FALSE}
@@ -106,21 +121,8 @@ USvideos = USvideos[order(USvideos[,'title'],- USvideos[,'views']),]
 
 ---
 
-# Plots
+# Most Viewed
 
-
-
-```{r what-is, echo = FALSE}
-ggplot(data = USvideos, mapping = aes(x = title, y = views, color = likes)) +
-  geom_point() + 
-  theme_minimal()
-```
-
-
-
----
-
-## Plot and text
 
 
 ```{r filtering, echo = FALSE}
@@ -128,7 +130,18 @@ USvideos %>%
   group_by(title, views) %>% 
   arrange(desc(views)) %>%
   distinct(title, views)  %>%
-  print(tbl_USvideos(USvideos), n = 100) 
+  print(tbl_USvideos(USvideos), n = 100)
+```
+
+
+
+---
+
+## Capital Letters
+
+
+```{r capital-letters, echo = FALSE}
+
 ```
 
 .pull-left[
@@ -145,7 +158,7 @@ USvideos %>%
 
 ---
 
-# Question/Exclamation effects on popularity
+# Question/Exclamation mark effects on popularity
 
 
 ```{r question-or-exclamation, echo=FALSE}
