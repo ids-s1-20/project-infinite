@@ -39,7 +39,7 @@ USvideos <- read_csv(here("data/USvideos.csv"))
 
 class: center, middle
 
-*What is the most popular video on Youtube?*
+*What makes a Youtube video popular?*
 
 ---
 
