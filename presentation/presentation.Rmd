@@ -143,7 +143,6 @@ USvideos = USvideos[order(USvideos[,'title'],- USvideos[,'views']),]
 # Most Viewed
 
 
-
 ```{r filtering, echo = FALSE}
 USvideos %>% 
   group_by(title, views) %>% 
@@ -197,11 +196,12 @@ USvideos %>%
 
 # Question/Exclamation mark effects on popularity
 
+- Is "clickbait" real? Does it affect the amount of traffic a video receives or is it just a theory. Are "clickbait" videos more prone to dislikes because of a misleading title?
 
 ```{r question-or-exclamation, echo=FALSE}
 USvideos %>% 
   filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
-  select(title, views, likes, comment_count) %>%
+  select(title, views, likes, dislikes, comment_count) %>%
   arrange(desc(views))
 ```
 
