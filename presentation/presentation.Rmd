@@ -54,8 +54,8 @@ class: inverse, top, middle
 - Tidymodels
 - Broom
 - Here
-- Dplyr
-- Stringr
+- Dplyr, select and display rows appropriately
+- Stringr, filter question and exclamation marks
 
 ---
 class: inverse, center, middle
