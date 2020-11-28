@@ -22,6 +22,8 @@ library(palmerpenguins)
 library(tidymodels)
 library(broom)
 library(here)
+library(dplyr)
+library(stringr)
 ```
 
 ```{r setup, include=FALSE}
@@ -104,7 +106,7 @@ or text in two columns $^*$
 # Plots
 
 ```{r filtering, echo = FALSE}
-stringr::str_detect(USvideos, "^[[:upper:][:space:]]+$")
+sapply(str_extract_all(USvideos, "\\b[A-Z]+\\b"), paste, collapse= ' ')
 ```
 
 ```{r plot-iris, echo = FALSE}
@@ -112,6 +114,19 @@ ggplot(data = USvideos, mapping = aes(x = views, y = likes, color = comment_coun
   geom_point() + 
   theme_minimal()
 ```
+
+```{r new dates, echo = FALSE}
+gsub("\\.", "/", )
+
+```
+
+```{r difference in days, echo = FALSE}
+USvideos$diff_in_days = as.numeric(difftime(USvideos$publish_date, USvideos$new_date, units = "days")) 
+USvideos
+```
+
+
+
 
 ---
 
