@@ -6,6 +6,7 @@ institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
+    css: [default, metropolis, uo-fonts]
     lib_dir: libs
     nature:
       ratio: "16:9"
@@ -38,7 +39,7 @@ USvideos <- read_csv(here("data/USvideos.csv"))
 
 class: center, middle, inverse
 
-*What makes a Youtube video popular?*
+# What makes a Youtube video popular?
 
 ---
 
@@ -60,7 +61,7 @@ class: inverse, top, middle
 ---
 class: inverse, center, middle
 
-# Section title
+# Variables Used
 
 ---
 
@@ -110,6 +111,12 @@ or text in two columns $^*$
 
 ---
 
+class: inverse, middle, center
+
+# Data Visualization
+
+---
+
 # Data Cleaning
 
 
@@ -137,7 +144,7 @@ USvideos %>%
 
 ---
 
-## Capital Letters
+## During what times of day do Youtubers post?
 
 
 ```{r capital-letters, echo = FALSE}
@@ -170,6 +177,19 @@ USvideos %>%
 
 ---
 
+
+# What is the most popular category?
+
+
+```{r popular-categories, echo=FALSE}
+USvideos %>% 
+  filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
+  select(title, views, likes, comment_count) %>%
+  arrange(desc(views))
+```
+
+---
+
 # Images
 
 ```{r castle, echo = FALSE, out.width = "60%", fig.align = "center", fig.cap = "Image credit: Photo by Jörg Angeli on Unsplash."}
@@ -184,7 +204,7 @@ background-image: url(https://images.unsplash.com/photo-1535448033526-c0e85c9e69
 
 ---
 
-# Math Expressions
+# Statistical Inferences 
 
 You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
 
