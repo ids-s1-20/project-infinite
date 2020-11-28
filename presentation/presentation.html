@@ -84,24 +84,6 @@ library(here)
 ```r
 library(dplyr)
 library(stringr)
-library(data.table)
-```
-
-```
-## 
-## Attaching package: 'data.table'
-```
-
-```
-## The following objects are masked from 'package:dplyr':
-## 
-##     between, first, last
-```
-
-```
-## The following object is masked from 'package:purrr':
-## 
-##     transpose
 ```
 
 
@@ -308,25 +290,25 @@ or text in two columns `\(^*\)`
 
 ---
 
-# Tables
+# Question/Exclamation effects on popularity
 
 
 
 ```
-## # A tibble: 1,268 x 1
-##    title                                                                        
-##    &lt;chr&gt;                                                                        
-##  1 -11-30-中國文化大學彩虹縮時(Taiwan,Taipei,CCU)   Three hour time-lapse photography of …
-##  2 'I have taken poison' claims war criminal                                    
-##  3 'Lightning Strike' B777-300 on departure @ KL743 // PH-BVS                   
-##  4 'Lord of the Rings' TV Series Gets Multi-Season Order At Amazon | News Flash…
-##  5 'Riverdale' Season 2: Josie Takes Center Stage In The Upcoming 3 Part Episod…
-##  6 ‘The Grand Tour’ Café                                                        
-##  7 (HD VERSION) Kelly Clarkson &amp; P!nk Everybody Hurts LIVE at the  American Mus…
-##  8 (SPOILERS) 'Shiva Saves the Day' Talked About Scene Ep. 804 | The Walking De…
-##  9 [ MAMA in Hong Kong] BTS_BTS Cypher 4 + MIC DROP(Steve Aoki Remix Ver.)      
-## 10 [ MAMA in Hong Kong] BTS_INTRO Perf. + Not Today                             
-## # … with 1,258 more rows
+## # A tibble: 182 x 4
+##    title                                              views  likes comment_count
+##    &lt;chr&gt;                                              &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;
+##  1 P!nk - Beautiful Trauma (Official Video)          2.15e7 504791         34879
+##  2 What's new, Atlas?                                1.08e7 205630         35422
+##  3 Little Mix bring the Power &amp; CNCO to The X Fact…  4.09e6 146340             0
+##  4 My Pretty Little Liars Audition Tape! | Shay Mi…  3.84e6 169168          4749
+##  5 FIRST TIME IM DOING THIS! TALKS WITH LIZA.        3.74e6 314872         12114
+##  6 P!nk Carpool Karaoke                              3.62e6 141681          8127
+##  7 I Dare You: GOING BALD!?                          2.82e6 153395         20573
+##  8 Let's Talk About Tesla Roadster 2020!             2.81e6  93993         12318
+##  9 Gordon is Served “The Weirdest Pizza I’ve Ever …  2.79e6  27260          3970
+## 10 BTS Sings Camila Cabello's 'Havana' &amp; Shows Off…  2.62e6 119787         10218
+## # … with 172 more rows
 ```
 
 ---

@@ -145,12 +145,14 @@ USvideos %>%
 
 ---
 
-# Tables
+# Question/Exclamation effects on popularity
 
 
 ```{r question-or-exclamation, echo=FALSE}
-USvideos %>%
-  str_count(title, "\\b[A-Z]{2,}\\b")
+USvideos %>% 
+  filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
+  select(title, views, likes, comment_count) %>%
+  arrange(desc(views))
 ```
 
 ---
