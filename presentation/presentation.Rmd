@@ -1,5 +1,5 @@
 ---
-title: "What is the most popular video on Youtube?."
+title: "What is the most popular video on Youtube?"
 subtitle: "Infinite possibilites"
 author: "Infinite <br> Alicia, Lucas, Lucia"
 institute: "University of Edinburgh"
@@ -24,6 +24,7 @@ library(broom)
 library(here)
 library(dplyr)
 library(stringr)
+library(data.table)
 ```
 
 ```{r setup, include=FALSE}
@@ -97,17 +98,18 @@ or text in two columns $^*$
 
 # Code
 
-```{r boring-regression}
 
+```{r cleaned, echo = FALSE}
+USvideos = USvideos[order(USvideos[,'title'],- USvideos[,'views']),] 
+  USvideos = USvideos[!duplicated(USvideos$title),]
 ```
+
 
 ---
 
 # Plots
 
-```{r filtering, echo = FALSE}
 
-```
 
 ```{r what-is, echo = FALSE}
 ggplot(data = USvideos, mapping = aes(x = title, y = views, color = likes)) +
@@ -122,9 +124,12 @@ ggplot(data = USvideos, mapping = aes(x = title, y = views, color = likes)) +
 ## Plot and text
 
 
-```{r old dates}
-ggplot(USvideos, mapping = aes(x = publish_time, y = trending_date)) +
-  geom_point()
+```{r filtering, echo = FALSE}
+USvideos %>% 
+  group_by(title, views) %>% 
+  arrange(desc(views)) %>%
+  distinct(title, views)  %>%
+  print(tbl_USvideos(USvideos), n = 100) 
 ```
 
 .pull-left[
@@ -143,10 +148,10 @@ ggplot(USvideos, mapping = aes(x = publish_time, y = trending_date)) +
 
 # Tables
 
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
-```{r iris-table, echo = FALSE}
-kable(head(iris), format = "html")
+```{r question-or-exclamation, echo=FALSE}
+USvideos %>% 
+  
 ```
 
 ---
