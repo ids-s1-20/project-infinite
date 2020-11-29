@@ -24,6 +24,7 @@ library(broom)
 library(here)
 library(dplyr)
 library(stringr)
+library(lubridate)
 ```
 
 ```{r setup, include=FALSE}
@@ -157,21 +158,11 @@ USvideos %>%
 ## During what times of day do Youtubers post?
 
 
-```{r capital-letters, echo = FALSE}
+```{r time-intervals, echo = FALSE}
 
 ```
 
-.pull-left[
-- Some text
-- goes here
-]
-.pull-right[
-```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-# see how I changed out.width and fig.width from defaults
-# to make the figure bigger
 
-```
-]
 
 ---
 
@@ -209,9 +200,11 @@ USvideos %>%
 
 # What is the most popular category?
 
-- If people wanted to become famous overnight, what category type will increase their chances of being famous. 
-```{r popular-categories, echo=FALSE}
 
+```{r popular-categories, echo = FALSE, fig.height = 5}
+USvideos %>%
+  ggplot(aes(x = category_id, y = views)) +
+    geom_point()
 ```
 
 ---
@@ -231,7 +224,6 @@ background-image: url()
 
 # Statistical Inferences 
 
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
 
 ```
 $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
