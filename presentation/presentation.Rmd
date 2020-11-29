@@ -204,7 +204,8 @@ USvideos %>%
 ```{r popular-categories, echo = FALSE, fig.height = 5}
 USvideos %>%
   ggplot(aes(x = category_id, y = views)) +
-    geom_point()
+    geom_point() +
+  scale_y_continous(limits = c(1,50000000))
 ```
 
 ---
