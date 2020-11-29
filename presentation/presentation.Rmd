@@ -205,7 +205,7 @@ USvideos %>%
 USvideos %>%
   ggplot(aes(x = category_id, y = views)) +
     geom_point() +
-  scale_y_continous(limits = c(1,50000000))
+  scale_y_continuous(limits = c(1, 45000000))
 ```
 
 ---
