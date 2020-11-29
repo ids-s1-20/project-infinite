@@ -114,17 +114,7 @@ class: inverse, middle, center
 
 # Layouts
 
-You can use plain text
 
-- or bullet points
-
-.pull-left[
-or text in two columns $^*$
-]
-.pull-right[
-- like
-- this
-]
 
 .footnote[
 [*] And add footnotes
@@ -159,10 +149,8 @@ USvideos %>%
   group_by(title, views) %>% 
   arrange(desc(views)) %>%
   distinct(title, views)  %>%
-  print(tbl_USvideos(USvideos), n = 100)
+  print(tbl_USvideos(USvideos), n = 17)
 ```
-
-
 
 ---
 
@@ -231,17 +219,16 @@ USvideos %>%
 
 ---
 
-# Insert the most popular video thumbnail and maybe include the comments
+# The Most Popular Video as of 2017
 
-```{r castle, echo = FALSE, out.width = "60%", fig.align = "center", fig.cap = "Image credit: Photo by Jörg Angeli on Unsplash."}
-include_graphics("https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
+```{r thumbnail, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Luis Fonsi, Demi Lovato - Échame La Culpa"}
+knitr::include_graphics('https://maddownload.com/wp-content/uploads/2018/12/luis-fonsi-demi-lovato-echame-la-culpa-08.jpg')
 ```
 
-Or you can also include a full page image. See next slide.
 
 ---
 
-background-image: url(https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)
+background-image: url()
 
 ---
 
