@@ -103,23 +103,7 @@ class: inverse, middle, center
 
 # For What
 
-- The presentation is created using the `xaringan` package
 
-- Use `---` to separate slides and `--` for incremental builds
-
---
-
-- Like this
-
----
-
-# Layouts
-
-
-
-.footnote[
-[*] And add footnotes
-]
 
 ---
 
@@ -200,13 +184,13 @@ USvideos %>%
 # What is the most popular category?
 
 
-```{r regression-line, echo = FALSE}
+```{r regression-line, echo = FALSE, include = FALSE}
 corr <- linear_reg() %>%
   set_engine("lm") %>%
-  fit(views ~ likes, data = USvideos)
+  fit(likes ~ views, data = USvideos)
 ```
 
-```{r regression, echo = FALSE}
+```{r regression, echo = FALSE, include = FALSE}
 tidy(corr)
 ```
 
@@ -214,20 +198,36 @@ tidy(corr)
 glance(corr)$r.squared
 ```
 
-```{r popular-categories, echo = FALSE, warning = FALSE, include = FALSE}
+```{r popular-categories, echo=FALSE, warning=FALSE}
 USvideos %>%
-  ggplot(aes(x = likes, y = views)) +
+  ggplot(aes(x = views, y = likes)) +
   geom_point() +
-  scale_y_continuous(limits = c(1, 25000000)) +
-  scale_x_continuous(limits = c(1, 500000)) +
+  scale_y_continuous(limits = c(1, 500000)) +
+  scale_x_continuous(limits = c(1, 25000000)) +
   geom_smooth(method = "lm", color = "Blue", se = FALSE) +
-  labs(x = "Number of Likes",
-       y = "Number of Views")
+  labs(x = "Number of Views",
+       y = "Number of Likes")
 ```
 
 ---
 
-# The Most Popular Video as of 2017
+# Statistical Inferences 
+
+
+$$Y_i = 4355+\frac{3}{100}X_i$$
+- R^2 of 0.8
+
+- The most popular video of 2017, Échame La Culpa has a total of 2,061,202,501 views as of November 28th, 2020
+
+$$Y_i = 4355+\frac{3}{100}(2,061,202,501) $$
+- With the least squared regression equation, we expect the total number of likes to be 61,428,189 but it is 8,900,000.
+
+.footnote[
+Video: https://www.youtube.com/watch?feature=youtu.be&v=TyHvyGVs42U&app=desktop
+]
+---
+
+# The Most Popular Video in of 2017
 
 ```{r thumbnail, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Luis Fonsi, Demi Lovato - Échame La Culpa"}
 knitr::include_graphics('https://maddownload.com/wp-content/uploads/2018/12/luis-fonsi-demi-lovato-echame-la-culpa-08.jpg')
@@ -235,22 +235,6 @@ knitr::include_graphics('https://maddownload.com/wp-content/uploads/2018/12/luis
 
 
 ---
-
-# Statistical Inferences 
-
-
-$$Y_i=12628+27X_i$$
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
-
----
-
 # End
 
 

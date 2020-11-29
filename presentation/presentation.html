@@ -94,23 +94,7 @@ class: inverse, middle, center
 
 # For What
 
-- The presentation is created using the `xaringan` package
 
-- Use `---` to separate slides and `--` for incremental builds
-
---
-
-- Like this
-
----
-
-# Layouts
-
-
-
-.footnote[
-[*] And add footnotes
-]
 
 ---
 
@@ -218,21 +202,35 @@ class: inverse, middle, center
 
 
 
+
+
+
+
 ```
-## # A tibble: 2 x 5
-##   term        estimate std.error statistic p.value
-##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-## 1 (Intercept) 128618.  65270.         1.97  0.0490
-## 2 likes           27.0     0.374     72.2   0
+## `geom_smooth()` using formula 'y ~ x'
 ```
 
-
-
-
+&lt;img src="presentation_files/figure-html/popular-categories-1.png" width="80%" /&gt;
 
 ---
 
-# The Most Popular Video as of 2017
+# Statistical Inferences 
+
+
+`$$Y_i = 4355+\frac{3}{100}X_i$$`
+- R^2 of 0.8
+
+- The most popular video of 2017, Échame La Culpa has a total of 2,061,202,501 views as of November 28th, 2020
+
+$$Y_i = 4355+\frac{3}{100}(2,061,202,501) $$
+- With the least squared regression equation, we expect the total number of likes to be 61,428,189 but it is 8,900,000.
+
+.footnote[
+Video: https://www.youtube.com/watch?feature=youtu.be&amp;v=TyHvyGVs42U&amp;app=desktop
+]
+---
+
+# The Most Popular Video in of 2017
 
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="https://maddownload.com/wp-content/uploads/2018/12/luis-fonsi-demi-lovato-echame-la-culpa-08.jpg" alt="Luis Fonsi, Demi Lovato - Échame La Culpa" width="70%" /&gt;
@@ -241,24 +239,6 @@ class: inverse, middle, center
 
 
 ---
-
-# Statistical Inferences 
-
-
-
-
-`$$Y_i=\frac{1}{n}\sum_{i=1}^nX_i$$`
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
-
----
-
 # End
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
