@@ -101,11 +101,6 @@ class: inverse, middle, center
 
 ---
 
-# For What
-
-
-
----
 
 class: inverse, middle, center
 
@@ -181,7 +176,7 @@ USvideos %>%
 ---
 
 
-# What is the most popular category?
+# Predicted Number of Views.
 
 
 ```{r regression-line, echo = FALSE, include = FALSE}
