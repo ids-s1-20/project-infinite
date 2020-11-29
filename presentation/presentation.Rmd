@@ -255,8 +255,7 @@ knitr::include_graphics('https://maddownload.com/wp-content/uploads/2018/12/luis
 
 ---
 
-class: center, middle, inverse
+class:inverse, center, middle
 
-# End
-
+background-image: url(https://image.freepik.com/free-vector/end-neon-style_118419-525.jpg)
 
