@@ -67,6 +67,18 @@ class: inverse, center, middle
 
 ---
 
+# Introduction to USvideos
+
+- Collected via Youtube API(Application Programming Interface)
+
+- Consists of 4998 rows, 13 variables
+
+- Videos collected from June 17th, 2008 to December 8th, 2017
+
+- Videos posted within the United States
+
+---
+
 # Variables Used
 
 - title, Name of the Youtube video
@@ -82,7 +94,6 @@ class: inverse, center, middle
 - comment_count, How many comments did the video receive
 
 ---
-
 class: inverse, middle, center
 
 # Using xaringan
@@ -210,7 +221,7 @@ USvideos %>%
 
 # What is the most popular category?
 
-
+- If people wanted to become famous overnight, what category type will increase their chances of being famous. 
 ```{r popular-categories, echo=FALSE}
 USvideos %>% 
   filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
@@ -220,7 +231,7 @@ USvideos %>%
 
 ---
 
-# Images
+# Insert the most popular video thumbnail and maybe include the comments
 
 ```{r castle, echo = FALSE, out.width = "60%", fig.align = "center", fig.cap = "Image credit: Photo by Jörg Angeli on Unsplash."}
 include_graphics("https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80")
@@ -254,7 +265,7 @@ Limitations:
 
 ---
 
-# Feeling adventurous?
+# End
 
 - Want to find out more about `xaringan`? See https://slides.yihui.name/xaringan/#1.
 
