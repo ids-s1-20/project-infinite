@@ -211,10 +211,7 @@ USvideos %>%
 
 - If people wanted to become famous overnight, what category type will increase their chances of being famous. 
 ```{r popular-categories, echo=FALSE}
-USvideos %>% 
-  filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
-  select(title, views, likes, comment_count) %>%
-  arrange(desc(views))
+
 ```
 
 ---
