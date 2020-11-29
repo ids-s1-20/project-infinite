@@ -158,10 +158,9 @@ USvideos %>%
 ## During what times of day do Youtubers post?
 
 
-```{r time-intervals, echo = FALSE}
+```{r time-of-day, echo = FALSE, include = FALSE}
 
 ```
-
 
 
 ---
@@ -201,11 +200,29 @@ USvideos %>%
 # What is the most popular category?
 
 
-```{r popular-categories, echo = FALSE, fig.height = 5}
+```{r regression-line, echo = FALSE}
+corr <- linear_reg() %>%
+  set_engine("lm") %>%
+  fit(views ~ likes, data = USvideos)
+```
+
+```{r regression, echo = FALSE}
+tidy(corr)
+```
+
+```{r squared, echo = FALSE, include = FALSE}
+glance(corr)$r.squared
+```
+
+```{r popular-categories, echo = FALSE, warning = FALSE, include = FALSE}
 USvideos %>%
-  ggplot(aes(x = category_id, y = views)) +
-    geom_point() +
-  scale_y_continuous(limits = c(1, 45000000))
+  ggplot(aes(x = likes, y = views)) +
+  geom_point() +
+  scale_y_continuous(limits = c(1, 25000000)) +
+  scale_x_continuous(limits = c(1, 500000)) +
+  geom_smooth(method = "lm", color = "Blue", se = FALSE) +
+  labs(x = "Number of Likes",
+       y = "Number of Views")
 ```
 
 ---
@@ -219,18 +236,10 @@ knitr::include_graphics('https://maddownload.com/wp-content/uploads/2018/12/luis
 
 ---
 
-background-image: url()
-
----
-
 # Statistical Inferences 
 
 
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+$$Y_i=12628+27X_i$$
 
 Limitations:
 

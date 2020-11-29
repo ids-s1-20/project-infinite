@@ -1,8 +1,8 @@
 # data
 
 Data Dimensions:
-1000 observations
-15 variables
+4998 observations
+13 variables
 
 ## USvideos
 
