@@ -133,22 +133,32 @@ USvideos %>%
 
 ---
 
-## During what times of day do Youtubers post?
+## What is the most frequent timing of a day for top-100-popular videos to be published?
 
 
 ```{r time-of-day, echo = FALSE, include = FALSE}
+
 library(lubridate)
 
 USvideos$publish_time <- hms(USvideos$publish_time)
 
 breaks <- hour(hm("00:00", "6:00", "12:00", "18:00", "23:59"))
 
-labels <- c("Night", "Morning", "Afternoon", "Evening")
+labels <- c("Midnight", "Morning", "Afternoon", "Evening")
 
 USvideos$Time_of_day <- cut(x=hour(USvideos$publish_time), breaks = breaks, labels = labels, include.lowest=TRUE)
 
 USvideos %>%
   mutate(Time_of_day)
+```
+
+```{r top-100-time-of-day, echo = FALSE}
+USvideos %>%
+  arrange(desc(views)) %>%
+  slice(1:100) %>%
+  count(Time_of_day) %>%
+  arrange(desc(n)) %>%
+  print(tbl_USvideos(USvideos), n = 5) 
 ```
 
 
