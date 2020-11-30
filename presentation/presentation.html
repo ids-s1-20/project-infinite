@@ -79,6 +79,8 @@ class: inverse, top, middle
 
 - likes, How many likes did the video receive
 
+- dislikes, How many dislikes did the video receive
+
 - comment_count, How many comments did the video receive
 
 ---
@@ -108,31 +110,30 @@ class: inverse, middle, center
 ```
 ## # A tibble: 1,268 x 2
 ## # Groups:   title, views [1,268]
-##    title                                                                   views
-##    &lt;chr&gt;                                                                   &lt;dbl&gt;
-##  1 Luis Fonsi, Demi Lovato - Échame La Culpa                              1.02e8
-##  2 Marvel Studios' Avengers: Infinity War Official Trailer                9.19e7
-##  3 YouTube Rewind: The Shape of  | #YouTubeRewind                         5.26e7
-##  4 Ed Sheeran - Perfect (Official Music Video)                            4.34e7
-##  5 BTS (방탄소년단) 'MIC Drop (Steve Aoki Remix)' Official MV             3.69e7
-##  6 Incredibles 2 Official Teaser Trailer                                  3.62e7
-##  7 Ed Sheeran - Perfect Duet (with Beyoncé) [Official Audio]              3.61e7
-##  8 Eminem - Walk On Water (Audio) ft. Beyoncé                             2.64e7
-##  9 42 HOLY GRAIL HACKS THAT WILL SAVE YOU A FORTUNE                       2.62e7
-## 10 Demi Lovato - Tell Me You Love Me                                      2.61e7
-## 11 P!nk - Beautiful Trauma (Official Video)                               2.15e7
-## 12 Selena Gomez, Marshmello - Wolves                                      2.08e7
-## 13 Jurassic World: Fallen Kingdom - Official Trailer [HD]                 1.82e7
-## 14 Jennifer Lopez - Amor, Amor, Amor (Official Video) ft. Wisin           1.77e7
-## 15 RAMPAGE - OFFICIAL TRAILER 1 [HD]                                      1.51e7
-## 16 G-Eazy &amp; Halsey - Him &amp; I (Official Video)                             1.49e7
-## 17 Stranger Things Cast Answer the Web's Most Searched Questions | WIR…   1.30e7
-## # … with 1,251 more rows
+##    title                                                            views
+##    &lt;chr&gt;                                                            &lt;dbl&gt;
+##  1 Luis Fonsi, Demi Lovato - Échame La Culpa                    102012605
+##  2 Marvel Studios' Avengers: Infinity War Official Trailer       91933007
+##  3 YouTube Rewind: The Shape of  | #YouTubeRewind                52611730
+##  4 Ed Sheeran - Perfect (Official Music Video)                   43449654
+##  5 BTS (방탄소년단) 'MIC Drop (Steve Aoki Remix)' Official MV    36857298
+##  6 Incredibles 2 Official Teaser Trailer                         36152111
+##  7 Ed Sheeran - Perfect Duet (with Beyoncé) [Official Audio]     36101955
+##  8 Eminem - Walk On Water (Audio) ft. Beyoncé                    26448434
+##  9 42 HOLY GRAIL HACKS THAT WILL SAVE YOU A FORTUNE              26221058
+## 10 Demi Lovato - Tell Me You Love Me                             26144104
+## 11 P!nk - Beautiful Trauma (Official Video)                      21545253
+## 12 Selena Gomez, Marshmello - Wolves                             20752341
+## 13 Jurassic World: Fallen Kingdom - Official Trailer [HD]        18184886
+## 14 Jennifer Lopez - Amor, Amor, Amor (Official Video) ft. Wisin  17679753
+## 15 RAMPAGE - OFFICIAL TRAILER 1 [HD]                             15104666
+## # … with 1,253 more rows
 ```
 
 ---
 
-## What is the most frequent timing of a day for top-100-popular videos to be published?
+
+# What time did the top 100 Youtuber videos upload?
 
 
 
@@ -148,10 +149,9 @@ class: inverse, middle, center
 ## 4 Morning        10
 ```
 
-
 ---
 
-# Time of Day 
+# Time of Day
 
 - The different times of day used in previous slide is presented in military time or the 24-hour clock and it is defined below: 
 
@@ -167,7 +167,9 @@ class: inverse, middle, center
 .footnote[
 [*] The time intervals defined was recorded in Eastern Standard Time (GMT -5)
 ]
+
 ---
+
 
 # Clickbait 
 
@@ -201,11 +203,6 @@ class: inverse, middle, center
 
 
 
-
-
-```
-## `geom_smooth()` using formula 'y ~ x'
-```
 
 &lt;img src="presentation_files/figure-html/popular-categories-1.png" width="80%" /&gt;
 
@@ -241,7 +238,7 @@ $$Y_i = 4355+\frac{3}{100}(2,061,202,501) $$
 --
 
 $$Y_i = 4355 + \frac{3}{100}(7828792160) $$
-- If and when the whole human population were to watch one video how many likes would it recieve?
+- If and when the whole human population were to watch one video how many likes would it receieve?
 
 --
 
