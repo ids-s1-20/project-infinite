@@ -121,8 +121,7 @@ USvideos %>%
   group_by(title, views) %>% 
   arrange(desc(views)) %>%
   distinct(title, views)  %>%
-  print(tbl_USvideos(USvideos), n = 17) %>%
-  kable(views = "digits")
+  print(tbl_USvideos(USvideos), n = 17)
 ```
 
 ---
