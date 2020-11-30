@@ -137,7 +137,18 @@ USvideos %>%
 
 
 ```{r time-of-day, echo = FALSE, include = FALSE}
+library(lubridate)
 
+USvideos$publish_time <- hms(USvideos$publish_time)
+
+breaks <- hour(hm("00:00", "6:00", "12:00", "18:00", "23:59"))
+
+labels <- c("Night", "Morning", "Afternoon", "Evening")
+
+USvideos$Time_of_day <- cut(x=hour(USvideos$publish_time), breaks = breaks, labels = labels, include.lowest=TRUE)
+
+USvideos %>%
+  mutate(Time_of_day)
 ```
 
 
