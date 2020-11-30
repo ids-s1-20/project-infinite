@@ -107,7 +107,7 @@ class: inverse, middle, center
 - This allows for us to rank the with accuracy because it adds up the total of the duplicate rows and gives us total values. 
 ```{r cleaned, echo = FALSE}
 USvideos = USvideos[order(USvideos[,'title'],- USvideos[,'views']),] 
-  USvideos = USvideos[!duplicated(USvideos$title),]
+USvideos = USvideos[!duplicated(USvideos$title),]
 ```
 
 
@@ -121,7 +121,14 @@ USvideos %>%
   group_by(title, views) %>% 
   arrange(desc(views)) %>%
   distinct(title, views)  %>%
-  print(tbl_USvideos(USvideos), n = 17)
+  print(tbl_USvideos(USvideos), n = 17) 
+
+  kable("views", 
+        digits = getOption("digits"),
+        row.names = NA,
+        col.names = NA
+        ) %>%
+    print(kable("views"))
 ```
 
 ---
@@ -163,6 +170,12 @@ USvideos %>%
   filter(title == "FIRST TIME IM DOING THIS! TALKS WITH LIZA." | title == "FLIPPING OVER SUPERCAR! *GONE VERY WRONG*" | title == "TRANSFORMING SUMMER MCKEEN INTO ME!!" | title == "WE WANT TO TALK ABOUT OUR MARRIAGE" | title == "TOTAL FAIL! NATASHA DENONA HOLIDAY WTF" | title == "FACE SURGERY WITH MAKEUP" | title == "NEWBORN PETS AND A NEW APARTMENT" | title == "SHOPPING FOR NEW FISH!!!" | title == "I TOOK THE $3,000,000 LAMBO TO CARMAX! They offered me......" | title == "ICE PRIMER? DOES IT WORK?!") %>%
   select(title, views, likes, dislikes, comment_count) %>%
   arrange(desc(views))
+
+kable("views", 
+        digits = getOption("digits"),
+        row.names = NA,
+        col.names = NA
+        )
 ```
 
 ---
