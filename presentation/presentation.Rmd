@@ -126,24 +126,6 @@ USvideos %>%
   print(tbl_USvideos(USvideos), n = 15)
 ```
 
----
-
-# Time of Day
-
-- The different times of day used in previous slide is presented in military time or the 24-hour clock and it is defined below: 
-
-- Morning: 06:00:00 ~ 11:59:59
-
-- Afternoon: 12:00:00 ~ 17:59:59
-
-- Evening: 18:00:00 ~ 23:59:59
-
-- Midnight: 00:00:00 ~ 05:59:59
-
-
-.footnote[
-[*] The time intervals defined was recorded in Eastern Standard Time (GMT -5)
-]
 
 ---
 
@@ -175,7 +157,6 @@ Time_of_day_n <- USvideos %>%
   print(tbl_USvideos(USvideos), n = 5) 
 ```
 
-<<<<<<< HEAD
 # Time of Day
 
 The different times of day used is presented in military time or the 24-hour clock and it is defined below: 
@@ -206,13 +187,7 @@ Time_of_day_n %>%
 ---
 
 
-# Clickbait 
-=======
----
-
-
 # Clickbait - Descending order of views
->>>>>>> 272293b9c6e2233588025535e64cf3ccded2d735
 
 - Is "clickbait" real? Does it affect the amount of traffic a video receives or is it just a theory. Are "clickbait" videos more prone to dislikes because of a misleading title?
 
@@ -256,6 +231,7 @@ glance(corr)$r.squared
 ```
 
 ```{r popular-categories, echo=FALSE, warning = FALSE, message = FALSE}
+options(scipen=200)
 USvideos %>%
   ggplot(aes(x = views, y = likes)) +
   geom_point() +
