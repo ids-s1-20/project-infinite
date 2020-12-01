@@ -132,25 +132,6 @@ class: inverse, middle, center
 
 ---
 
-
-# What time did the top 100 Youtuber videos upload?
-
-
-
-
-
-```
-## # A tibble: 4 x 2
-##   Time_of_day     n
-##   &lt;fct&gt;       &lt;int&gt;
-## 1 Afternoon      41
-## 2 Midnight       27
-## 3 Evening        22
-## 4 Morning        10
-```
-
----
-
 # Time of Day
 
 - The different times of day used in previous slide is presented in military time or the 24-hour clock and it is defined below: 
@@ -170,28 +151,70 @@ class: inverse, middle, center
 
 ---
 
+# What time did the top 100 Youtuber videos upload?
 
-# Clickbait 
+
+
+
+
+```
+## # A tibble: 4 x 2
+##   Time_of_day     n
+##   &lt;fct&gt;       &lt;int&gt;
+## 1 Afternoon      41
+## 2 Midnight       27
+## 3 Evening        22
+## 4 Morning        10
+```
+
+---
+
+
+# Clickbait - Descending order of views
 
 - Is "clickbait" real? Does it affect the amount of traffic a video receives or is it just a theory. Are "clickbait" videos more prone to dislikes because of a misleading title?
 
 
 ```
-## # A tibble: 10 x 5
+## # A tibble: 182 x 5
 ##    title                                     views  likes dislikes comment_count
 ##    &lt;chr&gt;                                     &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;         &lt;dbl&gt;
-##  1 FIRST TIME IM DOING THIS! TALKS WITH LI… 3.74e6 314872     2647         12114
-##  2 WE WANT TO TALK ABOUT OUR MARRIAGE       2.56e6  96321     7972         22149
-##  3 FLIPPING OVER SUPERCAR! *GONE VERY WRON… 2.43e6  65991     9011          9450
-##  4 I TOOK THE $3,000,000 LAMBO TO CARMAX! … 1.69e6  43997     6027          3608
-##  5 TOTAL FAIL! NATASHA DENONA HOLIDAY WTF   1.28e6  56867     2148         25326
-##  6 NEWBORN PETS AND A NEW APARTMENT         6.98e5  41328      803         16325
-##  7 TRANSFORMING SUMMER MCKEEN INTO ME!!     5.41e5  28387      300          1193
-##  8 FACE SURGERY WITH MAKEUP                 4.71e5  23634      460          1714
-##  9 SHOPPING FOR NEW FISH!!!                 3.02e5   8634      332          2027
-## 10 ICE PRIMER? DOES IT WORK?!               1.23e5   3912      298           403
+##  1 P!nk - Beautiful Trauma (Official Video) 2.15e7 504791    21898         34879
+##  2 What's new, Atlas?                       1.08e7 205630     4927         35422
+##  3 Little Mix bring the Power &amp; CNCO to Th… 4.09e6 146340     3104             0
+##  4 My Pretty Little Liars Audition Tape! |… 3.84e6 169168      914          4749
+##  5 FIRST TIME IM DOING THIS! TALKS WITH LI… 3.74e6 314872     2647         12114
+##  6 P!nk Carpool Karaoke                     3.62e6 141681     1289          8127
+##  7 I Dare You: GOING BALD!?                 2.82e6 153395     2416         20573
+##  8 Let's Talk About Tesla Roadster 2020!    2.81e6  93993     3186         12318
+##  9 Gordon is Served “The Weirdest Pizza I’… 2.79e6  27260      896          3970
+## 10 BTS Sings Camila Cabello's 'Havana' &amp; S… 2.62e6 119787     1975         10218
+## # … with 172 more rows
 ```
 
+---
+
+# Clickbait - Descending order of dislikes
+
+
+```
+## # A tibble: 182 x 5
+##    title                                    dislikes  views  likes comment_count
+##    &lt;chr&gt;                                       &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;         &lt;dbl&gt;
+##  1 P!nk - Beautiful Trauma (Official Video)    21898 2.15e7 504791         34879
+##  2 FLIPPING OVER SUPERCAR! *GONE VERY WRON…     9011 2.43e6  65991          9450
+##  3 15 Toothpaste Life Hacks YOU SHOULD KNO…     6075 2.34e6  65470         13164
+##  4 I TOOK THE $3,000,000 LAMBO TO CARMAX! …     6027 1.69e6  43997          3608
+##  5 Universal Basic Income Explained – Free…     5684 1.01e6  92305         17991
+##  6 What's new, Atlas?                           4927 1.08e7 205630         35422
+##  7 It's Here!!! CASEY NEISTAT MERCH             4590 1.21e6  54343          8302
+##  8 Apple iPhone X Review: The Best Yet!         4156 1.83e6  77531         12025
+##  9 Let's Talk About Tesla Roadster 2020!        3186 2.81e6  93993         12318
+## 10 Little Mix bring the Power &amp; CNCO to Th…     3104 4.09e6 146340             0
+## # … with 172 more rows
+```
+
+- By comparison between the descending order of views and dislikes of "Clickbait", it is clear that the first one "P!nk - Beautiful Trauma (Official Video)" with most views also gets the most dislikes.
 ---
 
 

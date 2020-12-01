@@ -128,6 +128,24 @@ USvideos %>%
 
 ---
 
+# Time of Day
+
+- The different times of day used in previous slide is presented in military time or the 24-hour clock and it is defined below: 
+
+- Morning: 06:00:00 ~ 11:59:59
+
+- Afternoon: 12:00:00 ~ 17:59:59
+
+- Evening: 18:00:00 ~ 23:59:59
+
+- Midnight: 00:00:00 ~ 05:59:59
+
+
+.footnote[
+[*] The time intervals defined was recorded in Eastern Standard Time (GMT -5)
+]
+
+---
 
 # What time did the top 100 Youtuber videos upload?
 
@@ -159,37 +177,30 @@ USvideos %>%
 
 ---
 
-# Time of Day
 
-- The different times of day used in previous slide is presented in military time or the 24-hour clock and it is defined below: 
-
-- Morning: 06:00:00 ~ 11:59:59
-
-- Afternoon: 12:00:00 ~ 17:59:59
-
-- Evening: 18:00:00 ~ 23:59:59
-
-- Midnight: 00:00:00 ~ 05:59:59
-
-
-.footnote[
-[*] The time intervals defined was recorded in Eastern Standard Time (GMT -5)
-]
-
----
-
-
-# Clickbait 
+# Clickbait - Descending order of views
 
 - Is "clickbait" real? Does it affect the amount of traffic a video receives or is it just a theory. Are "clickbait" videos more prone to dislikes because of a misleading title?
 
 ```{r question-or-exclamation, echo=FALSE}
 USvideos %>% 
-  filter(title == "FIRST TIME IM DOING THIS! TALKS WITH LIZA." | title == "FLIPPING OVER SUPERCAR! *GONE VERY WRONG*" | title == "TRANSFORMING SUMMER MCKEEN INTO ME!!" | title == "WE WANT TO TALK ABOUT OUR MARRIAGE" | title == "TOTAL FAIL! NATASHA DENONA HOLIDAY WTF" | title == "FACE SURGERY WITH MAKEUP" | title == "NEWBORN PETS AND A NEW APARTMENT" | title == "SHOPPING FOR NEW FISH!!!" | title == "I TOOK THE $3,000,000 LAMBO TO CARMAX! They offered me......" | title == "ICE PRIMER? DOES IT WORK?!") %>%
+  filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
   select(title, views, likes, dislikes, comment_count) %>%
   arrange(desc(views))
 ```
 
+---
+
+# Clickbait - Descending order of dislikes
+
+```{r question-exclamation, echo=FALSE}
+USvideos %>% 
+  filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
+  select(title, dislikes, views, likes, comment_count) %>%
+  arrange(desc(dislikes))
+```
+
+- By comparison between the descending order of views and dislikes of "Clickbait", it is clear that the first one "P!nk - Beautiful Trauma (Official Video)" with most views also gets the most dislikes.
 ---
 
 
