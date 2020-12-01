@@ -148,8 +148,8 @@ USvideos %>%
   mutate(Time_of_day)
 ```
 
-```{r top-500-time-of-day, echo = FALSE}
-USvideos %>%
+```{r top-100-time-of-day, echo = FALSE}
+Time_of_day_n <- USvideos %>%
   arrange(desc(views)) %>%
   slice(1:100) %>%
   count(Time_of_day) %>%
@@ -157,11 +157,9 @@ USvideos %>%
   print(tbl_USvideos(USvideos), n = 5) 
 ```
 
----
-
 # Time of Day
 
-- The different times of day used in previous slide is presented in military time or the 24-hour clock and it is defined below: 
+The different times of day used is presented in military time or the 24-hour clock and it is defined below: 
 
 - Morning: 06:00:00 ~ 11:59:59
 
@@ -175,6 +173,16 @@ USvideos %>%
 .footnote[
 [*] The time intervals defined was recorded in Eastern Standard Time (GMT -5)
 ]
+
+---
+
+```{r top-100-time-of-day graph, echo = FALSE}
+Time_of_day_n %>%
+  ggplot(aes(x = Time_of_day, 
+             y = n, 
+             fill = Time_of_day))+
+  geom_bar(stat = "identity")
+```
 
 ---
 
