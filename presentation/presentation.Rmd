@@ -157,9 +157,7 @@ Time_of_day_n <- USvideos %>%
   print(tbl_USvideos(USvideos), n = 5) 
 ```
 
-# Time of Day
-
-The different times of day used is presented in military time or the 24-hour clock and it is defined below: 
+--
 
 - Morning: 06:00:00 ~ 11:59:59
 
@@ -231,7 +229,6 @@ glance(corr)$r.squared
 ```
 
 ```{r popular-categories, echo=FALSE, warning = FALSE, message = FALSE}
-options(scipen=200)
 USvideos %>%
   ggplot(aes(x = views, y = likes)) +
   geom_point() +
