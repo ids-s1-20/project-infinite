@@ -258,7 +258,8 @@ sum_of_click_dislike/30
 
 ```
 
-All videos' overall proportion of dislikes: 0.001504847
+
+Regular videos' overall proportion of dislikes: 0.001504847
 
 Clickbait videos' proportion of dislikes: 0.003008789
 ---
