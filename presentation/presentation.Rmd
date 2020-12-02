@@ -227,6 +227,7 @@ Tile <- USvideos %>%
 ```
 
 ```{r tile plot, echo = FALSE}
+options(scipen=999)
 ggplot(Tile, aes(x = Time_of_day,
              y = category,
              fill = n))+
@@ -307,6 +308,7 @@ Prop %>%
 
 
 ```{r regression-line, echo = FALSE, include = FALSE}
+set.seed(1203)
 train_data <- training(initial_split(USvideos))
 test_data <- testing(initial_split(USvideos))
 
@@ -340,17 +342,18 @@ RMSE2 <- cbind(test_data, pred = predict(corr2, new_data = test_data)$.pred) %>%
   summarise(sqrt(mean((likes-pred)^2)))
 ```
 
-model 1 adjust R square: 0.7780867
+model 1 adjust R square: 0.8328397
 
-model 1 adjust R square: 0.8700796
+model 2 adjust R square: 0.8658459
 
-RMSE:64676.96
+RMSE:64469.13
 
-RMSE2:57349.44
+RMSE2:58060.69
 
-When new variable "comment_count" is added into the model, the accuracy of prediction is improved according to adjust R square and Root Mean Squared Error.
-Therefore, we use the second model for prediction.
+When new variable "comment_count" is added into the model, the accuracy of prediction has no obvious improvement. Since the values of both models' adjust R squares and Root Mean Squared Errors are close to each other.
+Therefore, we use the first model for prediction as it's simpler.
 
+---
 
 ```{r popular-categories, echo=FALSE, warning = FALSE, message = FALSE}
 USvideos %>%
