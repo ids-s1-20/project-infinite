@@ -133,8 +133,6 @@ USvideos %>%
 
 ---
 
-<<<<<<< HEAD
-
 # Common categories in the top-500 popular videos
 
 ```{r common_category_ID, echo=FALSE}
@@ -158,10 +156,6 @@ Common_category_ID <- USvideos %>%
 
 
 # What time did the top 500 Youtuber videos upload?
-=======
-# What time did the top 100 Youtube videos upload?
->>>>>>> 6f8e29737d38f442d9f7836dc6678fb7dceeea36
-
 
 ```{r time-of-day, echo = FALSE, include = FALSE}
 
@@ -208,7 +202,7 @@ Time_of_day_n <- USvideos %>%
 # Frequency
 
 
-```{r top-100-time-of-day graph, echo = FALSE}
+```{r top-500-time-of-day graph, echo = FALSE}
 Time_of_day_n %>%
   ggplot(aes(x = Time_of_day, 
              y = n, 
