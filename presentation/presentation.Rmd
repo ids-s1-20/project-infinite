@@ -61,9 +61,9 @@ class: inverse, top, middle
 --
 
 
-- Dplyr, Select and display accordingly
+- Dplyr, Select and display data accordingly
 
-- Stringr, Filter question and exclamation marks
+- Stringr, Filter question, exclamation marks and capital letters
 
 ---
 
@@ -141,18 +141,21 @@ Common_category_ID <- USvideos %>%
   slice(1:500) %>%
   count(category_id) %>%
   arrange(desc(n)) %>%
-  print(tbl_USvideos(USvideos), n = 3) 
+  print(tbl_USvideos(USvideos), n = 5) 
   
 ```
 
--The corresponding categories:
+- Corresponding categories:
 
-10: Music
+10: Music: Music videos, Albums
 
-23: Comedy
+23: Comedy: Funny compilations, stories, stand up comedy 
 
-24: Entertainment
+24: Entertainment: Wide variety.
 
+26: Howto & Style: Tutorials, fashion/style
+
+28: Science & Technology: Tech reviews, innovations
 ---
 
 
@@ -182,6 +185,7 @@ Time_of_day_n <- USvideos %>%
   arrange(desc(n)) %>%
   print(tbl_USvideos(USvideos), n = 5) 
 ```
+
 
 --
 
@@ -226,9 +230,10 @@ Time_of_day_n %>%
 
 ```{r question-or-exclamation, echo=FALSE}
 USvideos %>%
-   filter(title == "MOST PAINFUL LIP PLUMPER EVER ... OMG!!!" | title == "FLIPPING OVER SUPERCAR! *GONE VERY WRONG*" | title == "IS THIS THE CAMERA OF THE FUTURE?" | title == "WE WANT TO TALK ABOUT OUR MARRIAGE" | title == "TOTAL FAIL! NATASHA DENONA HOLIDAY WTF" | title == "FACE SURGERY WITH MAKEUP" | title == "NEWBORN PETS AND A NEW APARTMENT" | title == "FIRST TIME IM DOING THIS! TALKS WITH LIZA." | title == "I TOOK THE $3,000,000 LAMBO TO CARMAX! They offered me......" | title == "ICE PRIMER? DOES IT WORK?!") %>%	
-   select(title, views, likes, dislikes, comment_count) %>%	
-   arrange(desc(views))
+  filter(str_detect(title, '[:upper:]') & !str_detect(title, '[:lower:]')) %>%
+  select(title, views, likes, dislikes, comment_count) %>%
+  arrange(desc(views))
+
 ```
 
 

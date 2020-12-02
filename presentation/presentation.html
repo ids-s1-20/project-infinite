@@ -52,9 +52,9 @@ class: inverse, top, middle
 --
 
 
-- Dplyr, Select and display accordingly
+- Dplyr, Select and display data accordingly
 
-- Stringr, Filter question and exclamation marks
+- Stringr, Filter question, exclamation marks and capital letters
 
 ---
 
@@ -147,17 +147,22 @@ class: inverse, middle, center
 ## 1          24   130
 ## 2          10   101
 ## 3          23    64
-## # … with 11 more rows
+## 4          26    40
+## 5          28    29
+## # … with 9 more rows
 ```
 
--The corresponding categories:
+- Corresponding categories:
 
-10: Music
+10: Music: Music videos, Albums
 
-23: Comedy
+23: Comedy: Funny compilations, stories, stand up comedy 
 
-24: Entertainment
+24: Entertainment: Wide variety.
 
+26: Howto &amp; Style: Tutorials, fashion/style
+
+28: Science &amp; Technology: Tech reviews, innovations
 ---
 
 
@@ -175,6 +180,7 @@ class: inverse, middle, center
 ## 3 Evening       109
 ## 4 Morning        60
 ```
+
 
 --
 
@@ -209,19 +215,20 @@ class: inverse, middle, center
 
 
 ```
-## # A tibble: 10 x 5
+## # A tibble: 54 x 5
 ##    title                                     views  likes dislikes comment_count
 ##    &lt;chr&gt;                                     &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;         &lt;dbl&gt;
-##  1 FIRST TIME IM DOING THIS! TALKS WITH LI… 3.74e6 314872     2647         12114
-##  2 WE WANT TO TALK ABOUT OUR MARRIAGE       2.56e6  96321     7972         22149
-##  3 FLIPPING OVER SUPERCAR! *GONE VERY WRON… 2.43e6  65991     9011          9450
-##  4 IS THIS THE CAMERA OF THE FUTURE?        1.71e6  59681     1074          3775
-##  5 I TOOK THE $3,000,000 LAMBO TO CARMAX! … 1.69e6  43997     6027          3608
-##  6 TOTAL FAIL! NATASHA DENONA HOLIDAY WTF   1.28e6  56867     2148         25326
-##  7 MOST PAINFUL LIP PLUMPER EVER ... OMG!!! 7.79e5  37777     2370          5540
-##  8 NEWBORN PETS AND A NEW APARTMENT         6.98e5  41328      803         16325
-##  9 FACE SURGERY WITH MAKEUP                 4.71e5  23634      460          1714
-## 10 ICE PRIMER? DOES IT WORK?!               1.23e5   3912      298           403
+##  1 42 HOLY GRAIL HACKS THAT WILL SAVE YOU…  2.62e7 206111    39209         18104
+##  2 RAMPAGE - OFFICIAL TRAILER 1 [HD]        1.51e7 143947    12709         25593
+##  3 CONFRONTING MY DAD                       4.61e6 496499     3622         81051
+##  4 FIRST TIME IM DOING THIS! TALKS WITH L…  3.74e6 314872     2647         12114
+##  5 CONFRONTING MY MOM                       3.41e6 277250     4991         28200
+##  6 WE WANT TO TALK ABOUT OUR MARRIAGE       2.56e6  96321     7972         22149
+##  7 FLIPPING OVER SUPERCAR! *GONE VERY WRO…  2.43e6  65991     9011          9450
+##  8 IS THIS THE CAMERA OF THE FUTURE?        1.71e6  59681     1074          3775
+##  9 TEENS READ 10 FUNNY FRIEND ZONE TEXTS …  1.58e6  36077     1603          3155
+## 10 EVERY STAR WARS FAN EVER                 1.43e6  33689     8370          3057
+## # … with 44 more rows
 ```
 
 
