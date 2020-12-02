@@ -143,6 +143,8 @@ Common_category_ID <- USvideos %>%
   
 ```
 
+--
+
 - Corresponding categories:
 
 10: Music: Music videos, Albums
@@ -227,11 +229,12 @@ Time_of_day_n %>%
 - Is clickbait real? Does it affect the amount of traffic a video receives or is it just a theory. Are clickbait videos more prone to dislikes because of a misleading title?
 
 ```{r question-or-exclamation, echo=FALSE}
-USvideos %>%
+click <- USvideos %>%
   filter(str_detect(title, '[:upper:]') & !str_detect(title, '[:lower:]')) %>%
-  select(title, views, likes, dislikes, comment_count) %>%
-  arrange(desc(views))
+  select(title, views, likes, dislikes, comment_count, ) %>%
+  arrange(desc(views)) 
 
+click[-c(1,2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 23, 24, 25, 27, 28, 29, 30, 31, 32, 33),]
 ```
 
 
