@@ -13,6 +13,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      
 ---
 
 ```{r load-packages, include = FALSE}
@@ -242,21 +243,23 @@ Time_of_day_n %>%
 
 ---
 
-```{r time_of_day&category, echo = FALSE}
+```{r time_of_day&category, echo = FALSE, include = FALSE}
 
-USvideos %>%
+Tile <- USvideos %>%
   select(category_id, views, Time_of_day) %>%
   filter(category_id%in%Common_category_ID_5$category_id) %>%
   group_by( category_id, Time_of_day) %>%
   summarise(n = sum(views)) %>%
-  left_join(Common_category_ID_5[,c("category_id", "category")], by = "category_id") %>%
-  ggplot(aes(x = Time_of_day,
+  left_join(Common_category_ID_5[,c("category_id", "category")], by = "category_id") 
+```
+
+```{r tile plot, echo = FALSE}
+ggplot(Tile, aes(x = Time_of_day,
              y = category,
              fill = n))+
   geom_tile()+
   scale_fill_gradient(low = "white",
                       high = "red")
-
 ```
 
 more views--darker the color
@@ -328,19 +331,36 @@ ggplot(dislikes_prop, aes(x = type, y = prop))+
 
 
 ```{r regression-line, echo = FALSE, include = FALSE}
-initial_split(USvideos)
+train_data <- training(initial_split(USvideos))
+test_data <- testing(initial_split(USvideos))
+
 corr <- linear_reg() %>%
   set_engine("lm") %>%
-  fit(likes ~ views, data = USvideos)
+  fit(likes ~ views, data = train_data)
+
+corr2 <- linear_reg() %>%
+  set_engine("lm") %>%
+  fit(likes ~ views+comment_count, data = train_data)
 ```
 
 ```{r regression, echo = FALSE, include = FALSE}
 tidy(corr)
+tidy(corr2)
 ```
 
-```{r squared, echo = FALSE, include = FALSE}
+```{r squared, echo = FALSE}
 glance(corr)$r.squared
+glance(corr2)$r.squared
+
+glance(corr)$adj.r.squared
+glance(corr2)$adj.r.squared
 ```
+
+When you add new variable into the model, the accuracy of prediction is improved.
+New model is better
+r seuqres are above 0.8, generally good models
+no obvious improvement so we used the simple one 
+
 
 ```{r popular-categories, echo=FALSE, warning = FALSE, message = FALSE}
 USvideos %>%
