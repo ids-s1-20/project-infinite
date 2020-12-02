@@ -163,8 +163,11 @@ class: inverse, middle, center
 26: Howto &amp; Style: Tutorials, fashion/style
 
 28: Science &amp; Technology: Tech reviews, innovations
----
 
+---
+&lt;img src="presentation_files/figure-html/pie chart-1.png" width="80%" /&gt;
+
+---
 
 # What time did the top 500 Youtube videos upload?
 
@@ -241,6 +244,29 @@ class: inverse, middle, center
 Regular videos' overall proportion of dislikes: 0.001504847
 
 Clickbait videos' proportion of dislikes: 0.003008789
+
+---
+
+```r
+dislikes_prop &lt;- data.frame(type = c("all videos", "clickbait videos"),
+                            prop = c(0.001504847, 0.003008789)
+                            )
+
+ggplot(dislikes_prop, aes(x = type, y = prop))+
+  geom_histogram(stat = "identity")+
+  labs(x = "video types",
+       y = "proportion",
+       title = "Proportion of Dislikes",
+       subtitle = "comparison between proportion of all videos and clickbait videos")+
+  theme_light()
+```
+
+```
+## Warning: Ignoring unknown parameters: binwidth, bins, pad
+```
+
+&lt;img src="presentation_files/figure-html/unnamed-chunk-1-1.png" width="80%" /&gt;
+
 ---
 
 
