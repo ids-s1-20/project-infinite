@@ -182,6 +182,13 @@ Time_of_day_n <- USvideos %>%
   print(tbl_USvideos(USvideos), n = 5) 
 ```
 
+```{r}
+dislike_ratio <- USvideos %>%
+  arrange(desc(views)) %>%
+  slice(1:500) %>%
+  ratio(dislikes/views) 
+```
+
 --
 
  Morning: 06:00:00 ~ 11:59:59
@@ -222,8 +229,8 @@ Time_of_day_n %>%
 
 
 ```{r question-or-exclamation, echo=FALSE}
-USvideos %>% 
-  filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
+USvideos %>%
+  filter(str_detect(title, '[:upper:]') & !str_detect(title, '[:lower:]')) %>%
   select(title, views, likes, dislikes, comment_count) %>%
   arrange(desc(views))
 ```
