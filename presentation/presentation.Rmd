@@ -46,29 +46,6 @@ class: center, middle, inverse
 ---
 
 
-class: inverse, top, middle
-
-# Packages Used
-
-
-- Tidyverse
-
-- Knitr
-
-- Palmerpenguins
-
-- Tidymodels
-
---
-
-
-- Dplyr, Select and display data accordingly
-
-- Stringr, Filter question, exclamation marks and capital letters
-
----
-
-
 # Introduction to USvideos
 
 - Collected via Youtube API(Application Programming Interface)
@@ -242,6 +219,8 @@ Time_of_day_n %>%
 ```
 
 ---
+
+# Frequency of different type of videos uploaded
 
 ```{r time_of_day&category, echo = FALSE, include = FALSE}
 
