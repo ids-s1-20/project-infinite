@@ -199,7 +199,6 @@ Time_of_day_n %>%
 # Clickbait - Descending order of views
 
 
-
 ```{r question-or-exclamation, echo=FALSE}
 USvideos %>% 
   filter_all(any_vars(str_detect(str_to_lower(.), "\\?|\\!"))) %>%
