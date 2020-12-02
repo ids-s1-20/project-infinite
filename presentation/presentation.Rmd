@@ -285,7 +285,7 @@ click[-c(1,2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 23, 24, 25, 27, 28,
 
 - Is clickbait real? Are clickbait videos more prone to dislikes because of a misleading title?
 
-```{r dislike-proportion-comparison, echo = FALSE, include = FALSE}
+```{r dislike-proportion-comparison, echo = FALSE}
 options(scipen = 999)
 sum_of_all_dislike <- USvideos %>%
   summarise(dislikes/views) %>%
@@ -309,18 +309,21 @@ Regular videos' overall proportion of dislikes: 0.001504847
 Clickbait videos' proportion of dislikes: 0.003008789
 
 ---
-```{r}
-dislikes_prop <- data.frame(type = c("all videos", "clickbait videos"),
-                            prop = c(0.001504847, 0.003008789)
-                            )
+# Comparison Graph
 
-ggplot(dislikes_prop, aes(x = type, y = prop))+
-  geom_histogram(stat = "identity")+
-  labs(x = "video types",
-       y = "proportion",
-       title = "Proportion of Dislikes",
-       subtitle = "comparison between proportion of all videos and clickbait videos")+
-  theme_light()
+```{r dislike-proportion-comparison-graph, echo = FALSE}
+Prop <- tribble(
+  ~value, ~type, ~dislikes,
+  0.001504847, "All", "sum_of_all_dislikes",
+  0.003008789, "Clickbait", "sum_of_clickbait_dislikes",
+)
+Prop %>%
+  ggplot(mapping = aes(x = dislikes, y = value, fill = type)) +
+  geom_col() +
+  scale_y_continuous(breaks=c(0, 0.0005, 0.0010, 0.0015, 0.0020, 0.0025, 0.0030, 0.0035, 0.0040)) +
+  theme_minimal() +
+  labs(title = "Proportion of Dislikes",
+       subtitle = "comparison between proportion of all videos and clickbait videos")
          
 ```
 
