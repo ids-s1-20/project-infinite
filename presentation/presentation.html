@@ -209,6 +209,16 @@ class: inverse, middle, center
 
 ---
 
+
+```
+## `summarise()` regrouping output by 'category_id' (override with `.groups` argument)
+```
+
+&lt;img src="presentation_files/figure-html/time_of_day&amp;category-1.png" width="80%" /&gt;
+
+more views--darker the color
+---
+
 # Clickbait
 
 - Clickbait: articles, photographs, etc. on the internet that are intended to attract attention and encourage people to click on links to particular websites
@@ -238,6 +248,13 @@ class: inverse, middle, center
 - Is clickbait real? Are clickbait videos more prone to dislikes because of a misleading title?
 
 
+```
+## [1] 0.001504847
+```
+
+```
+## [1] 0.003008789
+```
 
 **Proportion of Dislikes = Dislikes/Views**
 
@@ -246,26 +263,9 @@ Regular videos' overall proportion of dislikes: 0.001504847
 Clickbait videos' proportion of dislikes: 0.003008789
 
 ---
+# Comparison Graph
 
-```r
-dislikes_prop &lt;- data.frame(type = c("all videos", "clickbait videos"),
-                            prop = c(0.001504847, 0.003008789)
-                            )
-
-ggplot(dislikes_prop, aes(x = type, y = prop))+
-  geom_histogram(stat = "identity")+
-  labs(x = "video types",
-       y = "proportion",
-       title = "Proportion of Dislikes",
-       subtitle = "comparison between proportion of all videos and clickbait videos")+
-  theme_light()
-```
-
-```
-## Warning: Ignoring unknown parameters: binwidth, bins, pad
-```
-
-&lt;img src="presentation_files/figure-html/unnamed-chunk-1-1.png" width="80%" /&gt;
+&lt;img src="presentation_files/figure-html/dislike-proportion-comparison-graph-1.png" width="80%" /&gt;
 
 ---
 
