@@ -30,12 +30,7 @@ To visualize our findings, we first had to combine the duplicate rows so
 we get a total value for each duplicate. Afterwards, we went ahead and
 visualized the most popular YouTube videos by views. We used the
 group\_by function to group both title and views to help us visualize
-the videos by descending order. Next, we wanted to figure out is there
-any benefit to posting at certain times of the day. We first set a
-certain time frame to a time of day and ranked them by descending order
-to view the time which had the most amounts of posts. We then wanted to
-get a better understanding of clickbait in YouTube videos. To get a
-better understanding, we filtered the top videos with an exclamation
+the videos by descending order. Next, we managed to get the common category_id in the top-500 videos and find the corresponding categories in the US_category_id.json file, the graph will clearly show the most common category. Then we wanted to figure out is there any benefit to posting at certain times of the day. We first set a certain time frame to a time of day and ranked them by descending order to view the time which had the most amounts of posts. We then wanted to get a better understanding of clickbait in YouTube videos. To get a better understanding, we filtered the top videos with an exclamation
 mark or question mark using the string package. We then selected views,
 likes, dislikes, and comment\_count because we wanted to see if
 clickbait would cause viewers to dislike the video because of misleading
