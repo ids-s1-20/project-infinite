@@ -258,6 +258,7 @@ sum_of_click_dislike/30
 
 ```
 
+**Proportion of Dislikes = Dislikes/Views**
 
 Regular videos' overall proportion of dislikes: 0.001504847
 
