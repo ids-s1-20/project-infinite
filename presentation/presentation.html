@@ -115,19 +115,6 @@ class: inverse, middle, center
 # Common categories in the top-500 videos
 
 
-```
-## # A tibble: 14 x 2
-##   category_id     n
-##         &lt;dbl&gt; &lt;int&gt;
-## 1          24   130
-## 2          10   101
-## 3          23    64
-## 4          26    40
-## 5          28    29
-## # … with 9 more rows
-```
-
---
 
 - Corresponding categories:
 
@@ -234,7 +221,7 @@ more views--darker the color
 
 **Proportion of Dislikes = Dislikes/Views**
 
-Regular videos' overall proportion of dislikes: 0.001504847
+All videos' overall proportion of dislikes: 0.001504847
 
 Clickbait videos' proportion of dislikes: 0.003008789
 
@@ -254,26 +241,19 @@ Clickbait videos' proportion of dislikes: 0.003008789
 
 
 
-```
-## [1] 0.7874668
-```
 
-```
-## [1] 0.9282977
-```
 
-```
-## [1] 0.7872428
-```
 
-```
-## [1] 0.9281464
-```
+model 1 adjust R square: 0.7780867
 
-When you add new variable into the model, the accuracy of prediction is improved.
-New model is better
-r seuqres are above 0.8, generally good models
-no obvious improvement so we used the simple one 
+model 1 adjust R square: 0.8700796
+
+RMSE:64676.96
+
+RMSE2:57349.44
+
+When new variable "comment_count" is added into the model, the accuracy of prediction is improved according to adjust R square and Root Mean Squared Error.
+Therefore, we use the second model for prediction.
 
 
 &lt;img src="presentation_files/figure-html/popular-categories-1.png" width="80%" /&gt;

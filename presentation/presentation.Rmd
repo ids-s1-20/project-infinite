@@ -111,7 +111,7 @@ USvideos %>%
 
 # Common categories in the top-500 videos
 
-```{r common_category_ID, echo=FALSE}
+```{r common_category_ID, echo=FALSE, include = FALSE}
 Common_category_ID <- USvideos %>%
   arrange(desc(views)) %>%
   slice(1:500) %>%
@@ -120,8 +120,6 @@ Common_category_ID <- USvideos %>%
   print(tbl_USvideos(USvideos), n = 5) 
   
 ```
-
---
 
 - Corresponding categories:
 
@@ -140,9 +138,9 @@ Common_category_ID <- USvideos %>%
 Common_category_ID_5 <- cbind(Common_category_ID[1:5,], 
                               category = c("Music", 
                                            "Comedy", 
-                                           "Entertainment",
+                                           "Entertain",
                                            "Howto&style",
-                                           "Science&Technology"))
+                                           "Science&Tech"))
 
 ggplot(Common_category_ID_5, aes(fill = category,
                                  x = category,
@@ -203,19 +201,15 @@ Time_of_day_n <- USvideos %>%
 
 ```{r top-500-time-of-day graph, echo = FALSE}
 Time_of_day_n %>%
-  ggplot(aes(x = "", 
+  ggplot(aes(x = Time_of_day, 
              y = n, 
              fill = Time_of_day)) +
   geom_bar(stat = "identity",
            position = "stack") +
-  coord_polar("y", start = 0)+
-  labs(x = "",
+  labs(x = "Time_of_day",
        y = "Frequency") +
   scale_fill_discrete(name = "Time of Day") +
-  theme_linedraw()+
-  geom_text(stat = "identity", 
-            aes(label = scales::percent(n/500)), 
-                position = position_stack(vjust = 0.5))
+  theme_linedraw()
 ```
 
 ---
@@ -283,7 +277,7 @@ sum_of_click_dislike/30
 
 **Proportion of Dislikes = Dislikes/Views**
 
-Regular videos' overall proportion of dislikes: 0.001504847
+All videos' overall proportion of dislikes: 0.001504847
 
 Clickbait videos' proportion of dislikes: 0.003008789
 
@@ -330,18 +324,32 @@ tidy(corr)
 tidy(corr2)
 ```
 
-```{r squared, echo = FALSE}
+```{r squared, echo = FALSE, include = FALSE}
 glance(corr)$r.squared
-glance(corr2)$r.squared
-
 glance(corr)$adj.r.squared
+
+glance(corr2)$r.squared
 glance(corr2)$adj.r.squared
 ```
 
-When you add new variable into the model, the accuracy of prediction is improved.
-New model is better
-r seuqres are above 0.8, generally good models
-no obvious improvement so we used the simple one 
+```{r test-data, echo = FALSE, include = FALSE}
+RMSE <- cbind(test_data, pred = predict(corr, new_data = test_data)$.pred) %>%
+  summarise(sqrt(mean((likes-pred)^2)))
+
+RMSE2 <- cbind(test_data, pred = predict(corr2, new_data = test_data)$.pred) %>%
+  summarise(sqrt(mean((likes-pred)^2)))
+```
+
+model 1 adjust R square: 0.7780867
+
+model 1 adjust R square: 0.8700796
+
+RMSE:64676.96
+
+RMSE2:57349.44
+
+When new variable "comment_count" is added into the model, the accuracy of prediction is improved according to adjust R square and Root Mean Squared Error.
+Therefore, we use the second model for prediction.
 
 
 ```{r popular-categories, echo=FALSE, warning = FALSE, message = FALSE}
