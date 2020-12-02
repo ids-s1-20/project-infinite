@@ -221,12 +221,9 @@ Time_of_day_n %>%
 
 ---
 
-
 # Clickbait
 
-- Clickbait, articles, photographs, etc. on the internet that are intended to attract attention and encourage people to click on links to particular websites
-
-- Is clickbait real? Does it affect the amount of traffic a video receives or is it just a theory. Are clickbait videos more prone to dislikes because of a misleading title?
+- Clickbait: articles, photographs, etc. on the internet that are intended to attract attention and encourage people to click on links to particular websites
 
 ```{r question-or-exclamation, echo=FALSE}
 click <- USvideos %>%
@@ -235,10 +232,35 @@ click <- USvideos %>%
   arrange(desc(views)) 
 
 click[-c(1,2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 23, 24, 25, 27, 28, 29, 30, 31, 32, 33),]
+
 ```
 
+---
 
+# Clickbait
 
+- Is clickbait real? Are clickbait videos more prone to dislikes because of a misleading title?
+
+```{r dislike-proportion-comparison, echo = FALSE, include = FALSE}
+options(scipen = 999)
+sum_of_all_dislike <- USvideos %>%
+  summarise(dislikes/views) %>%
+  sum()
+
+sum_of_all_dislike/1269
+
+options(scipen = 999)
+sum_of_click_dislike <- click %>%
+  summarise(dislikes/views) %>%
+  sum()
+
+sum_of_click_dislike/30
+
+```
+
+All videos' overall proportion of dislikes: 0.001504847
+
+Clickbait videos' proportion of dislikes: 0.003008789
 ---
 
 
