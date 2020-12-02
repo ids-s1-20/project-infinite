@@ -98,8 +98,6 @@ class: inverse, top, middle
 
 ---
 
-
-
 class: inverse, middle, center
 
 # Data Visualization
