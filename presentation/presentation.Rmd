@@ -182,12 +182,6 @@ Time_of_day_n <- USvideos %>%
   print(tbl_USvideos(USvideos), n = 5) 
 ```
 
-```{r}
-dislike_ratio <- USvideos %>%
-  arrange(desc(views)) %>%
-  slice(1:500) %>%
-  ratio(dislikes/views) 
-```
 
 --
 
