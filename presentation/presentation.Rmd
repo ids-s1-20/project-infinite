@@ -128,7 +128,7 @@ Common_category_ID_5 <- cbind(Common_category_ID[1:5,],
                                            "Howto&style",
                                            "Science&Tech"))
 
-Common_category_ID_5 <- Common_category_ID_5 %>%
+Common_category_ID_5_2 <- Common_category_ID_5 %>%
   mutate(category =factor(category,
                           levels=c("Music",
                                    "Comedy",
@@ -136,9 +136,9 @@ Common_category_ID_5 <- Common_category_ID_5 %>%
                                    "Howto&style",
                                    "Science&Tech")))
 
-ggplot(Common_category_ID_5, aes(fill = category,
-                                 x = category,
-                                 y = n)) +
+ggplot(Common_category_ID_5_2, aes(fill = category,
+                                   x = category,
+                                   y = n)) +
   geom_bar(stat = "identity") +
   labs(x = "Categories",
        y = "Frequency") +
@@ -210,11 +210,7 @@ Time_of_day_n %>%
 
 ---
 
-<<<<<<< HEAD
 # Views that each category recives, at different time
-=======
-# Frequency of different types of videos uploaded
->>>>>>> 4f04a487f2649c143bdb36cf56387fae6a790877
 
 ```{r time_of_day&category, echo = FALSE, include = FALSE}
 
@@ -236,7 +232,6 @@ ggplot(Tile, aes(x = Time_of_day,
                       high = "red")
 ```
 
-more views--darker the color
 ---
 
 # Clickbait
