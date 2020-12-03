@@ -320,7 +320,7 @@ RMSE2 <- cbind(test_data, pred = predict(corr2, new_data = test_data)$.pred) %>%
   summarise(sqrt(mean((likes-pred)^2)))
 ```
 
-Model 1: Likes and Views
+**Model 1: Likes and Views**
 
 Adjusted R squared: 0.832
 
@@ -328,7 +328,7 @@ Root Mean Squared Error: 64469.13
 
 --
 
-Model 2:Likes and Views plus Comments
+**Model 2:Likes and Views plus Comments**
 
 Adjusted R squared: 0.866
 
