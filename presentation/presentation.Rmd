@@ -210,7 +210,11 @@ Time_of_day_n %>%
 
 ---
 
+<<<<<<< HEAD
 # Views that each category recives, at different time
+=======
+# Frequency of different types of videos uploaded
+>>>>>>> 4f04a487f2649c143bdb36cf56387fae6a790877
 
 ```{r time_of_day&category, echo = FALSE, include = FALSE}
 
@@ -252,7 +256,7 @@ click[-c(1,2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 23, 24, 25, 27, 28,
 ---
 
 
-# Clickbait, are they disliked more than regular videos?
+# Proportions of dislikes for all and clickbait videos
 
 
 ```{r dislike-proportion-comparison, echo = FALSE, include = FALSE}
