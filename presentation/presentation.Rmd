@@ -107,7 +107,7 @@ USvideos %>%
 
 ---
 
-# Popular categories in the top-500-views videos
+# Common categories among the top 500 popular videos
 
 ```{r common_category_ID, echo=FALSE, include = FALSE}
 Common_category_ID <- USvideos %>%
@@ -147,7 +147,7 @@ ggplot(Common_category_ID_5_2, aes(fill = category,
 
 ---
 
-# What time did the top-500-views Youtube videos upload?
+# What time did the top 500 popular Youtube videos upload?
 
 ```{r time-of-day, echo = FALSE, include = FALSE}
 
