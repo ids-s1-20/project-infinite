@@ -282,7 +282,7 @@ $$ \frac{\sum_{n=30}^{30} CD}{30} = 0.0030  $$
 ---
 
 
-# Predicted Number of Views.
+# Adjusted R-squared and Root Mean Squared Error
 
 
 ```{r regression-line, echo = FALSE, include = FALSE}
@@ -320,11 +320,17 @@ RMSE2 <- cbind(test_data, pred = predict(corr2, new_data = test_data)$.pred) %>%
   summarise(sqrt(mean((likes-pred)^2)))
 ```
 
-Model 1 adjusted R square: 0.8328397
+Model 1: Likes and Views
 
-Model 2 adjusted R square: 0.8658459
+Adjusted R squared: 0.832
 
-RMSE: 64469.13
+Root Mean Squared Error: 64469.13
+
+--
+
+Model 2:Likes and Views plus Comments
+
+Adjusted R squared: 0.866
 
 RMSE2: 58060.69
 

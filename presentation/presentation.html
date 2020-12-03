@@ -216,7 +216,7 @@ $$ \frac{\sum_{n=30}^{30} CD}{30} = 0.0030  $$
 ---
 
 
-# Predicted Number of Views.
+# Adjusted R-squared and Root Mean Squared Error
 
 
 
@@ -227,16 +227,23 @@ $$ \frac{\sum_{n=30}^{30} CD}{30} = 0.0030  $$
 
 
 
-model 1 adjust R square: 0.8328397
+Model 1: Likes and Views
 
-model 2 adjust R square: 0.8658459
+Adjusted R squared: 0.832
 
-RMSE: 64469.13
+Root Mean Squared Error: 64469.13
+
+--
+
+Model 2:Likes and Views plus Comments
+
+Adjusted R squared: 0.866
 
 RMSE2: 58060.69
 
-When new variable "comment_count" is added into the model, the accuracy of prediction has no obvious improvement. Since the values of both models' adjust R squares and Root Mean Squared Errors are close to each other.
-Therefore, we use the first model for prediction as it's simpler.
+When the new variable "comment_count" is added into the model, the accuracy of the prediction has no obvious improvement. Because the values of both models' adjusted R squares and Root Mean Squared Errors are almost identical.
+
+Therefore, we implemented the first model for prediction.
 
 ---
 
