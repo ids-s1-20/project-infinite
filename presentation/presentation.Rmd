@@ -1,5 +1,5 @@
 ---
-title: "Youtube"
+title: "YouTube"
 subtitle: " "
 author: "Infinite <br> Alicia, Lucas, Lucia"
 institute: "University of Edinburgh"
@@ -41,14 +41,14 @@ USvideos <- read_csv(here("data/USvideos.csv"))
 
 class: center, middle, inverse
 
-# What makes a Youtube video popular?
+# What makes a YouTube video popular?
 
 ---
 
 
 # Introduction to USvideos
 
-- Collected via Youtube API(Application Programming Interface)
+- Collected via YouTube API(Application Programming Interface)
 
 - Consists of 4998 rows, 13 variables
 
@@ -60,7 +60,7 @@ class: center, middle, inverse
 
 # Variables Used
 
-- title, Name of the Youtube video
+- title, Name of the YouTube video
 
 - category_id, Which category does the video fall under
 
@@ -84,9 +84,7 @@ class: inverse, middle, center
 
 # Data Cleaning
 
-- We had duplicate Youtube videos in separate rows so we merged the duplicate rows into one single row and also combined the views, likes and comments together.
-
-- This allows for us to rank the with accuracy because it adds up the total of the duplicate rows and gives us total values. 
+- We had duplicate YouTube videos in separate rows so we merged the duplicate rows into one single row and also combined the views, likes and comments together. This allows for us to rank the videos with accuracy. 
 ```{r cleaned, echo = FALSE}
 USvideos = USvideos[order(USvideos[,'title'],- USvideos[,'views']),] 
 USvideos = USvideos[!duplicated(USvideos$title),]
@@ -109,7 +107,7 @@ USvideos %>%
 
 ---
 
-# Common categories in the top-500 videos
+# Popular categories in the top-500-views videos
 
 ```{r common_category_ID, echo=FALSE, include = FALSE}
 Common_category_ID <- USvideos %>%
@@ -127,8 +125,16 @@ Common_category_ID_5 <- cbind(Common_category_ID[1:5,],
                               category = c("Music", 
                                            "Comedy", 
                                            "Entertainment",
-                                           "Howto & style",
-                                           "Science & Tech"))
+                                           "Howto&style",
+                                           "Science&Tech"))
+
+Common_category_ID_5 <- Common_category_ID_5 %>%
+  mutate(category =factor(category,
+                          levels=c("Music",
+                                   "Comedy",
+                                   "Entertainment",
+                                   "Howto&style",
+                                   "Science&Tech")))
 
 ggplot(Common_category_ID_5, aes(fill = category,
                                  x = category,
@@ -141,7 +147,7 @@ ggplot(Common_category_ID_5, aes(fill = category,
 
 ---
 
-# What time did the top 500 Youtube videos upload?
+# What time did the top-500-views Youtube videos upload?
 
 ```{r time-of-day, echo = FALSE, include = FALSE}
 
@@ -204,7 +210,7 @@ Time_of_day_n %>%
 
 ---
 
-# Frequency of different type of videos uploaded
+# Views that each category recives, at different time
 
 ```{r time_of_day&category, echo = FALSE, include = FALSE}
 
