@@ -27,10 +27,8 @@ USvideos <- read_csv(here("data/USvideos.csv"))
 Our presentation can be found [here](presentation/presentation.html).
 
 ## Data 
+Mitchell, J 2019, _Trending YouTube Video Statistics_, electronic dataset, Kaggle, viewed 26 October 2020, <https://www.kaggle.com/datasnaek/youtube-new?select=CAvideos.csv>.
 
-Include a citation for your data here. 
-See https://github.com/ids-s1-20/project-infinite.git for guidance on proper citation for datasets. 
-If you got your data off the web, make sure to note the retrieval date.
 
 ## References
 

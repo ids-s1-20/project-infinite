@@ -31,6 +31,7 @@ To visualize our findings, we first had to combine the duplicate rows so
 we get a total value for each duplicate. Afterwards, we went ahead and
 visualized the most popular YouTube videos by views. We used the
 group\_by function to group both title and views to help us visualize
+<<<<<<< HEAD
 the videos by descending order. In addition, we added the common
 categories for the top 500 videos and produced a histogram. Next, we
 wanted to figure out is there any benefit to posting at certain times of
@@ -50,6 +51,23 @@ checked the R^2 score to check if the regression is an appropriate fit
 for our data. The regression line appropriate regression line was
 determined by comparing the adjusted r squared and the root mean squared
 error of two different models.
+=======
+the videos by descending order. Next, we wanted to figure out is there
+any benefit to posting at certain times of the day. We first set a
+certain time frame to a time of day and ranked them by descending order
+to view the time which had the most amounts of posts. We then wanted to
+get a better understanding of clickbait in YouTube videos. To get a
+better understanding, we filtered the top videos with an exclamation
+mark or question mark using the string package. We then selected views,
+likes, dislikes, and comment\_count because we wanted to see if
+clickbait would cause viewers to dislike the video because of misleading
+titles. Also, it was of interest to us to find the ratios between like
+to dislikes for both regular and clickbait videos. Lastly, we wanted to
+estimate how many likes a video would receive it were to reach 7.8
+billion views. We did so by finding the least-squares regression learned
+in week 8. After finding the equation, we also checked the R^2 score to
+check if the regression is an appropriate fit for our data.
+>>>>>>> 04d62eb8a5ed38d2242c2ebbe2b862301f920f4d
 
 Our findings were somewhat surprising. We found that 3/5 of the top 5
 YouTube videos were music videos, 1 of them was a trailer to the movie
@@ -151,10 +169,9 @@ Our presentation can be found [here](presentation/presentation.html).
 
 ## Data
 
-Include a citation for your data here. See
-<https://github.com/ids-s1-20/project-infinite.git> for guidance on
-proper citation for datasets. If you got your data off the web, make
-sure to note the retrieval date.
+Mitchell, J 2019, *Trending YouTube Video Statistics*, electronic
+dataset, Kaggle, viewed 26 October 2020,
+<https://www.kaggle.com/datasnaek/youtube-new?select=CAvideos.csv>.
 
 ## References
 
