@@ -121,32 +121,22 @@ Common_category_ID <- USvideos %>%
   
 ```
 
-- Corresponding categories:
 
-10: Music: Music videos, Albums
-
-23: Comedy: Funny compilations, stories, stand up comedy 
-
-24: Entertainment: Wide variety.
-
-26: Howto & Style: Tutorials, fashion/style
-
-28: Science & Technology: Tech reviews, innovations
-
----
 ```{r pie chart, echo = FALSE}
 Common_category_ID_5 <- cbind(Common_category_ID[1:5,], 
                               category = c("Music", 
                                            "Comedy", 
-                                           "Entertain",
-                                           "Howto&style",
-                                           "Science&Tech"))
+                                           "Entertainment",
+                                           "Howto & style",
+                                           "Science & Tech"))
 
 ggplot(Common_category_ID_5, aes(fill = category,
                                  x = category,
-                                 y = n))+
-  geom_bar(stat = "identity")
-
+                                 y = n)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Categories",
+       y = "Frequency") +
+  theme_linedraw()
 ```
 
 ---
@@ -206,7 +196,7 @@ Time_of_day_n %>%
              fill = Time_of_day)) +
   geom_bar(stat = "identity",
            position = "stack") +
-  labs(x = "Time_of_day",
+  labs(x = "Time of day",
        y = "Frequency") +
   scale_fill_discrete(name = "Time of Day") +
   theme_linedraw()
@@ -259,7 +249,7 @@ click[-c(1,2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 23, 24, 25, 27, 28,
 
 - Is clickbait real? Are clickbait videos more prone to dislikes because of a misleading title?
 
-```{r dislike-proportion-comparison, echo = FALSE}
+```{r dislike-proportion-comparison, echo = FALSE, include = FALSE}
 options(scipen = 999)
 sum_of_all_dislike <- USvideos %>%
   summarise(dislikes/views) %>%
@@ -276,11 +266,11 @@ sum_of_click_dislike/30
 
 ```
 
-**Proportion of Dislikes = Dislikes/Views**
+$$Proportion = \frac{Likes}{Views}$$
 
-All videos' overall proportion of dislikes: 0.001504847
+Proportion of dislikes for all videos: 0.001504847
 
-Clickbait videos' proportion of dislikes: 0.003008789
+Proportion of dislikes for clickbait videos: 0.003008789
 
 ---
 # Comparison Graph
@@ -354,6 +344,8 @@ When new variable "comment_count" is added into the model, the accuracy of predi
 Therefore, we use the first model for prediction as it's simpler.
 
 ---
+
+# Least Squares Regression
 
 ```{r popular-categories, echo=FALSE, warning = FALSE, message = FALSE}
 USvideos %>%
