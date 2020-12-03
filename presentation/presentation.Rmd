@@ -245,9 +245,9 @@ click[-c(1,2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 23, 24, 25, 27, 28,
 
 ---
 
-# Clickbait
 
-- Is clickbait real? Are clickbait videos more prone to dislikes because of a misleading title?
+# Clickbait, are they disliked more than regular videos?
+
 
 ```{r dislike-proportion-comparison, echo = FALSE, include = FALSE}
 options(scipen = 999)
@@ -266,30 +266,18 @@ sum_of_click_dislike/30
 
 ```
 
-$$Proportion = \frac{Likes}{Views}$$
 
-Proportion of dislikes for all videos: 0.001504847
+$$ \frac{\sum_{n=1}^{1269} AD}{1269} = 0.0015  $$
+- AD = All dislikes
 
-Proportion of dislikes for clickbait videos: 0.003008789
+$$ \frac{\sum_{n=30}^{30} CD}{30} = 0.0030  $$
+- CD = Clickbait dislikes
 
----
-# Comparison Graph
+--
+ 
+- The proportion of dislikes for clickbait videos are twice as much of all videos!
 
-```{r dislike-proportion-comparison-graph, echo = FALSE}
-Prop <- tribble(
-  ~value, ~type, ~dislikes,
-  0.001504847, "All", "sum_of_all_dislikes",
-  0.003008789, "Clickbait", "sum_of_clickbait_dislikes",
-)
-Prop %>%
-  ggplot(mapping = aes(x = dislikes, y = value, fill = type)) +
-  geom_col() +
-  scale_y_continuous(breaks=c(0, 0.0005, 0.0010, 0.0015, 0.0020, 0.0025, 0.0030, 0.0035, 0.0040)) +
-  theme_minimal() +
-  labs(title = "Proportion of Dislikes",
-       subtitle = "comparison between proportion of all videos and clickbait videos")
-         
-```
+
 
 ---
 
