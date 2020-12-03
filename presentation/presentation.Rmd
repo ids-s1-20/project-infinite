@@ -226,10 +226,13 @@ Tile <- USvideos %>%
 options(scipen=999)
 ggplot(Tile, aes(x = Time_of_day,
              y = category,
-             fill = n))+
-  geom_tile()+
+             fill = n)) +
+  geom_tile() +
+  labs(x = "Time of Day",
+       y = "Category") +
   scale_fill_gradient(low = "white",
-                      high = "red")
+                      high = "red",
+                      name = "Views") 
 ```
 
 ---
@@ -337,7 +340,7 @@ Root Mean Squared Error: 64469.13
 
 Adjusted R squared: 0.866
 
-RMSE2: 58060.69
+Root Mean Squared Error: 58060.69
 
 When the new variable "comment_count" is added into the model, the accuracy of the prediction has no obvious improvement. Because the values of both models' adjusted R squares and Root Mean Squared Errors are almost identical.
 
@@ -409,11 +412,15 @@ Video: https://www.youtube.com/watch?feature=youtu.be&v=TyHvyGVs42U&app=desktop
 
 ---
 
-# The Most Popular Video in of 2017
+# Limitations
 
-```{r thumbnail, echo = FALSE, out.width = "70%", fig.align = "center", fig.cap = "Luis Fonsi, Demi Lovato - Échame La Culpa"}
-knitr::include_graphics('https://maddownload.com/wp-content/uploads/2018/12/luis-fonsi-demi-lovato-echame-la-culpa-08.jpg')
-```
+- Outdated Youtube data
+
+- Growing Audience 
+
+- Youtube algorithms
+
+- Small selection of videos 
 
 
 ---
