@@ -1,4 +1,4 @@
-What makes a Youtube video popular?
+
 ================
 INFINITE
 
