@@ -4,11 +4,37 @@ INFINITE
 
 ## Summary
 
-    This data analysis has been a success and it has been fun researching something that we use every day. The dataset we used was 'USvideos', gives us analytical information about videos on YouTube such as the number of likes, views, dislikes, comment_count. Data varies from 2008 to 2018 with 10000 rows but reduced to half because the large dataset resulted in errors.
-    
-    Our research question was "What makes a YouTube video popular. Is it the most amount of likes, comments, or views? It would be of course the number of views but videos such as 'Baby' by Justin Bieber which has a total of 11 million dislikes and a like to dislike ratio of 15:11. The absurd amount of dislikes disqualifies a video from being in the top 10 most popular videos. So to investigate our research question, we came out with five additional questions, what is the most viewed video, what category is uploaded most, during what time of day do YouTubers post, effects of clickbait on views, and a statistical question which asks "How many likes will a video with 7.8 billion views get?” In addition, we used the adjusted r squared and the root mean squared error to complement the statistical question.
-    
-    To visualize our findings, we first had to combine the duplicate rows. We viewed the most popular videos using the group_by function to group both title and views. Next, we set a time frame to a time interval and ranked them to determine the time of day with the most uploads. To discover clickbait, we filtered the top videos with capital letters using the string package and ranked them by views, likes, and dislikes to determine if clickbait caused viewers to dislike the video because of a misleading title. Lastly, we wanted to estimate how many likes a video would receive it were to reach 7.8 billion views. We selected the regression line by comparing the adjusted r squared and the root mean squared error of two different models.
+This data analysis has been a success and it has been fun researching
+something that we use every day. The dataset we used was ‘USvideos’,
+gives us analytical information about videos on YouTube such as the
+number of likes, views, dislikes, comment\_count. Data varies from 2008
+to 2018 with 10000 rows but reduced to half because the large dataset
+resulted in errors.
+
+Our research question was “What makes a YouTube video popular. Is it the
+most amount of likes, comments, or views? It would be of course the
+number of views but videos such as ‘Baby’ by Justin Bieber which has a
+total of 11 million dislikes and a like to dislike ratio of 15:11. The
+absurd amount of dislikes disqualifies a video from being in the top 10
+most popular videos. So to investigate our research question, we came
+out with five additional questions, what is the most viewed video, what
+category is uploaded most, during what time of day do YouTubers post,
+effects of clickbait on views, and a statistical question which asks”How
+many likes will a video with 7.8 billion views get?” In addition, we
+used the adjusted r squared and the root mean squared error to
+complement the statistical question.
+
+To visualize our findings, we first had to combine the duplicate rows.
+We viewed the most popular videos using the group\_by function to group
+both title and views. Next, we set a time frame to a time interval and
+ranked them to determine the time of day with the most uploads. To
+discover clickbait, we filtered the top videos with capital letters
+using the string package and ranked them by views, likes, and dislikes
+to determine if clickbait caused viewers to dislike the video because of
+a misleading title. Lastly, we wanted to estimate how many likes a video
+would receive it were to reach 7.8 billion views. We selected the
+regression line by comparing the adjusted r squared and the root mean
+squared error of two different models.
 
 Our findings were somewhat surprising. We found that 3/5 of the top 5
 YouTube videos were music videos, 1/5 was a movie trailer and the last
