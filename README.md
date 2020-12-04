@@ -58,18 +58,19 @@ videos. We could assume that the larger comment count for clickbait
 could be a result of the viewers expressing their anger for the
 deception. Finally, we finished the data analysis with a least-squares
 regression. But before we decided on what line to draw, we tested the
-adjusted r squared and the root mean squared error of two models. We
-concluded that the appropriate equation for the regression line is y =
-5212 plus (3/100)x, this implies that with 0 views a video would receive
-4355 likes which doesn’t make sense. We calculated the r squared to have
-a value of 0.83 which was solid enough to make statistical inferences on
-the data. Therefore, we applied the regression line to predicted the
-number of likes for the most popular video, “Échame La Culpa” would
-receive if it had 2 billion views. While the difference in the predicted
-likes and actual likes in the video was off by approximately 53 million,
-we can infer a few things. People re-watch but they cannot re-like the
-videos or they don’t have a Google account which doesn’t allow them to
-like.
+adjusted r squared and the root mean squared error of two models. There
+is no evident difference between their accuracies, so we decided to use
+the simpler model for prediction. We concluded that the appropriate
+equation for the regression line is y = 5212 plus (3/100)x, this implies
+that with 0 views a video would receive 4355 likes which doesn’t make
+sense. We calculated the r squared to have a value of 0.83 which was
+solid enough to make statistical inferences on the data. Therefore, we
+applied the regression line to predicted the number of likes for the
+most popular video, “Échame La Culpa” would receive if it had 2 billion
+views. While the difference in the predicted likes and actual likes in
+the video was off by approximately 53 million, we can infer a few
+things. People re-watch but they cannot re-like the videos or they don’t
+have a Google account which doesn’t allow them to like.
 
     ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 
