@@ -210,7 +210,7 @@ Time_of_day_n %>%
 
 ---
 
-# Views that each category recives, at different time
+# Views each category recives at different times
 
 ```{r time_of_day&category, echo = FALSE, include = FALSE}
 
@@ -276,12 +276,12 @@ sum_of_click_dislike/30
 
 
 $$ \frac{\sum_{n=1}^{1269} AD}{1269} = 0.0015  $$
-- AD = All dislikes
+- AD = Dislikes for all videos
 
 --
 
 $$ \frac{\sum_{n=30}^{30} CD}{30} = 0.0030  $$
-- CD = Clickbait dislikes
+- CD = Dislikes for clickbait videos
 
 --
  
@@ -408,13 +408,10 @@ Video: https://www.youtube.com/watch?feature=youtu.be&v=TyHvyGVs42U&app=desktop
 
 # Limitations
 
-- Outdated Youtube data
-
-- Growing young demographic 
+- Unrepresentative of all videos/
 
 - Youtube algorithms
 
-- Small pool of videos 
 
 
 ---
