@@ -26,7 +26,8 @@ USvideos <- read_csv(here("data/USvideos.csv"))
 
 ## Presentation
 
-Our presentation can be found [here](presentation/presentation.html).
+Our presentation slides can be found [here](presentation/presentation.html).
+Our pre-recorded video can be found [here](https://media.ed.ac.uk/media/1_115i7oth)
 
 ## Data 
 Mitchell, J 2019, _Trending YouTube Video Statistics_, electronic dataset, Kaggle, viewed 26 October 2020, <https://www.kaggle.com/datasnaek/youtube-new?select=CAvideos.csv>.

@@ -408,7 +408,7 @@ Video: https://www.youtube.com/watch?feature=youtu.be&v=TyHvyGVs42U&app=desktop
 
 # Limitations
 
-- Unrepresentative of all videos/
+- Unrepresentative of all videos
 
 - Youtube algorithms
 
