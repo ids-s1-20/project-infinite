@@ -106,7 +106,7 @@ like.
 
 Our presentation slides can be found
 [here](presentation/presentation.html). Our pre-recorded video can be
-found [here](https://media.ed.ac.uk/media/1_115i7oth)
+found [here](https://media.ed.ac.uk/media/1+-+INFINITE/1_egvlkmts)
 
 ## Data
 
