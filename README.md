@@ -32,7 +32,7 @@ discover clickbait, we filtered the top videos with capital letters
 using the string package and ranked them by views, likes, and dislikes
 to determine if clickbait caused viewers to dislike the video because of
 a misleading title. Lastly, we wanted to estimate how many likes a video
-would receive it were to reach 7.8 billion views. We selected the
+would receive it were to reach 2 billion views. We selected the
 regression line by comparing the adjusted r squared and the root mean
 squared error of two different models.
 
@@ -41,7 +41,7 @@ YouTube videos were music videos, 1/5 was a movie trailer and the last
 one was a YouTube Rewind of the most memorable videos on YouTube. Music
 videos being the majority was expected as music videos are generally
 posted on Youtube, it is evident because the frequencies of common
-categories was music which were usually uploaded in the afternoon. Next,
+categories was music which was usually uploaded in the afternoon. Next,
 we found the frequency of the different times of day for uploading
 YouTube videos and turns out, majority of the uploads occur in the
 afternoon. We expected that it would be uploaded during the evening due
@@ -69,11 +69,7 @@ receive if it had 2 billion views. While the difference in the predicted
 likes and actual likes in the video was off by approximately 53 million,
 we can infer a few things. People re-watch but they cannot re-like the
 videos or they don’t have a Google account which doesn’t allow them to
-like. We also used the regression line to predict the number of likes a
-video would receive if the whole human population watched one specific
-video. We approximated that it would receive 233 million likes, but we
-may never know how many likes that video would get because of government
-censorship and lack of wi-fi in some places of the world.
+like.
 
     ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 
